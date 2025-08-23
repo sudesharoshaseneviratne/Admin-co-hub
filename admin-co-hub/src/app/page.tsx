@@ -14,12 +14,16 @@ export default function Home() {
     // Handle smooth scrolling when landing on homepage with hash
     const hash = window.location.hash;
     if (hash) {
+      // Check if this is an initial load or navigation from another page
+      const isInitialLoad = !sessionStorage.getItem('hasVisited');
+      const delay = isInitialLoad ? 2500 : 100; // Wait for loading screen if initial load
+      
       setTimeout(() => {
         const element = document.getElementById(hash.substring(1));
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 1000); // Wait for loading screen to finish
+      }, delay);
     }
   }, []);
   return (
@@ -51,7 +55,7 @@ export default function Home() {
                   <a href="/quote" className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group text-center">
                     <span className="inline-block group-hover:animate-pulse">🚀</span> Get Started Today
                   </a>
-                  <a href="#how-it-works" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-lg text-center">
+                  <a href="/how-it-works" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-lg text-center">
                     Learn How It Works
                   </a>
                 </div>
@@ -145,28 +149,66 @@ export default function Home() {
         </section>
 
         {/* Trust Badges */}
-        <section className="py-12 bg-gradient-to-r from-gray-50 to-blue-50 border-y relative overflow-hidden">
-          <div className="absolute inset-0 bg-white/50"></div>
+        <section className="py-16 bg-gradient-to-r from-gray-50 via-blue-50 to-indigo-50 border-y relative overflow-hidden">
+          <div className="absolute inset-0 bg-white/60"></div>
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-4 left-10 w-16 h-16 bg-blue-400 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-4 right-10 w-12 h-12 bg-indigo-400 rounded-full animate-pulse delay-1000"></div>
+          </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <AnimatedSection animation="fadeInUp">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="text-center group hover:scale-110 transition-all duration-300 cursor-pointer">
-                  <div className="text-3xl mb-2 group-hover:animate-bounce">🛡️</div>
-                  <div className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">ISO 27001 Certified</div>
-                </div>
-                <div className="text-center group hover:scale-110 transition-all duration-300 cursor-pointer">
-                  <div className="text-3xl mb-2 group-hover:animate-bounce">🇦🇺</div>
-                  <div className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">Australian Privacy Act Compliant</div>
-                </div>
-                <div className="text-center group hover:scale-110 transition-all duration-300 cursor-pointer">
-                  <div className="text-3xl mb-2 group-hover:animate-bounce">⭐</div>
-                  <div className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
-                    <AnimatedCounter end={200} suffix="+" /> Happy Clients
+            <AnimatedSection animation="fadeInUp" className="text-center mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2 bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent">
+                Trusted & Certified
+              </h2>
+              <p className="text-gray-600">Your security and satisfaction are our top priorities</p>
+            </AnimatedSection>
+            <AnimatedSection animation="fadeInUp" delay={200}>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-blue-100 group-hover:border-blue-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-blue-200 group-hover:to-blue-300 transition-all duration-300">
+                      <svg className="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">ISO 27001</h3>
+                    <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Certified</p>
                   </div>
                 </div>
-                <div className="text-center group hover:scale-110 transition-all duration-300 cursor-pointer">
-                  <div className="text-3xl mb-2 group-hover:animate-bounce">🕐</div>
-                  <div className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">24/7 Support</div>
+                <div className="text-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-green-100 group-hover:border-green-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-green-200 group-hover:to-green-300 transition-all duration-300">
+                      <svg className="w-8 h-8 text-green-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                      </svg>
+                    </div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-green-600 transition-colors">Australian Privacy</h3>
+                    <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Act Compliant</p>
+                  </div>
+                </div>
+                <div className="text-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-yellow-100 group-hover:border-yellow-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-yellow-200 group-hover:to-yellow-300 transition-all duration-300">
+                      <svg className="w-8 h-8 text-yellow-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-yellow-600 transition-colors">
+                      <AnimatedCounter end={200} suffix="+" />
+                    </h3>
+                    <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Happy Clients</p>
+                  </div>
+                </div>
+                <div className="text-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-purple-100 group-hover:border-purple-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-purple-200 group-hover:to-purple-300 transition-all duration-300">
+                      <svg className="w-8 h-8 text-purple-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">24/7</h3>
+                    <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Support</p>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -193,7 +235,7 @@ export default function Home() {
               <AnimatedSection animation="scaleIn" delay={100} className="relative group">
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-blue-100">
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mb-6 group-hover:animate-spin">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mb-6">
                       <span className="text-2xl">🔍</span>
                     </div>
                     <div className="text-blue-600 font-bold text-sm mb-2 animate-pulse">STEP 01</div>
@@ -213,7 +255,7 @@ export default function Home() {
               <AnimatedSection animation="scaleIn" delay={200} className="relative group">
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-green-100">
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-full mb-6 group-hover:animate-spin">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-full mb-6">
                       <span className="text-2xl">📋</span>
                     </div>
                     <div className="text-green-600 font-bold text-sm mb-2 animate-pulse">STEP 02</div>
@@ -233,7 +275,7 @@ export default function Home() {
               <AnimatedSection animation="scaleIn" delay={300} className="relative group">
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-purple-100">
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full mb-6 group-hover:animate-spin">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full mb-6">
                       <span className="text-2xl">⚡</span>
                     </div>
                     <div className="text-purple-600 font-bold text-sm mb-2 animate-pulse">STEP 03</div>
@@ -253,7 +295,7 @@ export default function Home() {
               <AnimatedSection animation="scaleIn" delay={400} className="relative group">
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-orange-100">
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full mb-6 group-hover:animate-spin">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full mb-6">
                       <span className="text-2xl">📈</span>
                     </div>
                     <div className="text-orange-600 font-bold text-sm mb-2 animate-pulse">STEP 04</div>
@@ -337,7 +379,7 @@ export default function Home() {
                     Admin & Co Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.&rdquo;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mr-4 group-hover:animate-spin">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mr-4">
                       <span className="text-blue-600 font-semibold">SM</span>
                     </div>
                     <div>
@@ -356,7 +398,7 @@ export default function Home() {
                     The scalability and reliability of their services allowed us to focus on growth while they handled our administrative complexities seamlessly.&rdquo;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mr-4 group-hover:animate-spin">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mr-4">
                       <span className="text-green-600 font-semibold">DC</span>
                     </div>
                     <div>
@@ -375,7 +417,7 @@ export default function Home() {
                     Outstanding customer service and attention to detail. They feel like an extension of our team rather than an external provider.&rdquo;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mr-4 group-hover:animate-spin">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mr-4">
                       <span className="text-purple-600 font-semibold">ET</span>
                     </div>
                     <div>
@@ -407,12 +449,16 @@ export default function Home() {
                 Join hundreds of Australian businesses that trust Admin & Co Hub for their outsourcing needs
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/quote" className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group text-center">
-                  <span className="inline-block group-hover:animate-bounce mr-2">📞</span>
+                <a href="/quote" className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group text-center flex items-center justify-center">
+                  <svg className="w-5 h-5 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                   Get Your Free Consultation
                 </a>
-                <a href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 text-center">
-                  <span className="inline-block group-hover:animate-bounce mr-2">📧</span>
+                <a href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 text-center flex items-center justify-center group">
+                  <svg className="w-5 h-5 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                   Contact Us Today
                 </a>
               </div>
@@ -456,10 +502,32 @@ export default function Home() {
               </AnimatedSection>
               <AnimatedSection animation="fadeInRight" delay={300}>
                 <h3 className="text-lg font-semibold mb-4 text-purple-400">Contact</h3>
-                <ul className="space-y-2 text-gray-400">
-                  <li className="hover:text-white transition-colors cursor-pointer">📧 hello@adminco.com.au</li>
-                  <li className="hover:text-white transition-colors cursor-pointer">� 1e300 ADMIN CO</li>
-                  <li className="hover:text-white transition-colors cursor-pointer">� Syd0ney, Australia</li>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-center hover:text-white transition-colors cursor-pointer group">
+                    <div className="w-5 h-5 mr-3 flex-shrink-0">
+                      <svg className="w-5 h-5 text-purple-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span>hello@adminco.com.au</span>
+                  </li>
+                  <li className="flex items-center hover:text-white transition-colors cursor-pointer group">
+                    <div className="w-5 h-5 mr-3 flex-shrink-0">
+                      <svg className="w-5 h-5 text-purple-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <span>1300 ADMIN CO</span>
+                  </li>
+                  <li className="flex items-center hover:text-white transition-colors cursor-pointer group">
+                    <div className="w-5 h-5 mr-3 flex-shrink-0">
+                      <svg className="w-5 h-5 text-purple-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <span>Sydney, Australia</span>
+                  </li>
                 </ul>
               </AnimatedSection>
             </div>

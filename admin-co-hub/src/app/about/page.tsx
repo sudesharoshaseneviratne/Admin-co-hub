@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedCounter from '@/components/AnimatedCounter';
@@ -17,7 +18,7 @@ export default function About() {
               About Admin & Co Hub
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Your trusted Australian BPO partner, combining local accountability with global efficiency 
+              Your trusted Australian BPO partner, combining local accountability with global efficiency
               to deliver exceptional business process outsourcing services.
             </p>
           </AnimatedSection>
@@ -31,20 +32,20 @@ export default function About() {
             <AnimatedSection animation="fadeInLeft">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2018, Admin & Co Hub emerged from a simple observation: Australian businesses 
-                needed outsourcing solutions that understood their unique market requirements while 
+                Founded in 2018, Admin & Co Hub emerged from a simple observation: Australian businesses
+                needed outsourcing solutions that understood their unique market requirements while
                 delivering world-class efficiency.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                We bridge the gap between local accountability and global scalability, ensuring your 
+                We bridge the gap between local accountability and global scalability, ensuring your
                 business operations run seamlessly while you focus on growth and innovation.
               </p>
               <p className="text-lg text-gray-600">
-                Today, we proudly serve over 200 businesses across Australia, from innovative startups 
+                Today, we proudly serve over 200 businesses across Australia, from innovative startups
                 to established enterprises, helping them streamline operations and achieve their goals.
               </p>
             </AnimatedSection>
-            
+
             <AnimatedSection animation="fadeInRight" delay={300}>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6">
@@ -95,7 +96,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Trust & Transparency</h3>
                 <p className="text-gray-600">
-                  We build lasting partnerships through honest communication, clear processes, 
+                  We build lasting partnerships through honest communication, clear processes,
                   and reliable delivery on our commitments.
                 </p>
               </div>
@@ -108,7 +109,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Excellence in Execution</h3>
                 <p className="text-gray-600">
-                  We strive for perfection in every task, continuously improving our processes 
+                  We strive for perfection in every task, continuously improving our processes
                   and exceeding client expectations.
                 </p>
               </div>
@@ -121,7 +122,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Innovation & Growth</h3>
                 <p className="text-gray-600">
-                  We embrace new technologies and methodologies to help our clients stay 
+                  We embrace new technologies and methodologies to help our clients stay
                   ahead in their competitive markets.
                 </p>
               </div>
@@ -141,13 +142,19 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedSection animation="fadeInLeft" delay={100}>
               <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-4xl text-blue-600">👨‍💼</span>
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <Image
+                    src="/Leadership-Team/Michael-Chen.jpg"
+                    alt="Michael Chen - CEO & Founder"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Michael Chen</h3>
                 <p className="text-blue-600 font-medium mb-3">CEO & Founder</p>
                 <p className="text-gray-600">
-                  15+ years in business operations and process optimization. Former McKinsey consultant 
+                  15+ years in business operations and process optimization. Former McKinsey consultant
                   with expertise in scaling Australian businesses.
                 </p>
               </div>
@@ -155,13 +162,19 @@ export default function About() {
 
             <AnimatedSection animation="fadeInUp" delay={200}>
               <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-4xl text-green-600">👩‍💼</span>
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <Image
+                    src="/Leadership-Team/Sarah-Williams.jpg"
+                    alt="Sarah Williams - COO"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sarah Williams</h3>
                 <p className="text-green-600 font-medium mb-3">COO</p>
                 <p className="text-gray-600">
-                  Operations expert with 12+ years managing large-scale BPO implementations. 
+                  Operations expert with 12+ years managing large-scale BPO implementations.
                   Specializes in quality assurance and client success.
                 </p>
               </div>
@@ -169,13 +182,19 @@ export default function About() {
 
             <AnimatedSection animation="fadeInRight" delay={300}>
               <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-4xl text-purple-600">👨‍💻</span>
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <Image
+                    src="/Leadership-Team/David-Kumar.jpg"
+                    alt="David Kumar - CTO"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">David Kumar</h3>
                 <p className="text-purple-600 font-medium mb-3">CTO</p>
                 <p className="text-gray-600">
-                  Technology leader with expertise in automation, AI integration, and secure 
+                  Technology leader with expertise in automation, AI integration, and secure
                   data management systems for enterprise clients.
                 </p>
               </div>
@@ -192,18 +211,18 @@ export default function About() {
               Ready to Partner with Us?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join the growing number of Australian businesses that trust Admin & Co Hub 
+              Join the growing number of Australian businesses that trust Admin & Co Hub
               for their outsourcing needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
+              <a
+                href="/contact"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold inline-block"
               >
                 Get Started Today
               </a>
-              <a 
-                href="/services" 
+              <a
+                href="/services"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors text-lg font-semibold inline-block"
               >
                 View Our Services

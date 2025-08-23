@@ -10,33 +10,16 @@ export default function Navigation() {
 
   const navItems = [
     { href: '/services', label: 'Services' },
-    { href: '/#how-it-works', label: 'How It Works' },
+    { href: '/how-it-works', label: 'How It Works' },
     { href: '/about', label: 'About' },
     { href: '/testimonials', label: 'Success Stories' },
   ];
 
   const isActive = (href: string) => {
-    if (href.startsWith('/#')) {
-      return pathname === '/';
-    }
     return pathname === href;
   };
 
-  const handleNavClick = (href: string) => {
-    if (href.startsWith('/#')) {
-      const sectionId = href.substring(2);
-      if (pathname === '/') {
-        // If we're on the homepage, scroll to the section
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      } else {
-        // If we're on another page, navigate to homepage with hash
-        window.location.href = href;
-      }
-    }
-  };
+
 
   return (
     <nav className="bg-white/95 backdrop-blur-sm shadow-sm border-b fixed w-full top-0 z-40 transition-all duration-300">
@@ -54,26 +37,19 @@ export default function Navigation() {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => {
-                    if (item.href.startsWith('/#')) {
-                      e.preventDefault();
-                      handleNavClick(item.href);
-                    }
-                  }}
-                  className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 relative group ${
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative ${
                     isActive(item.href)
                       ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
+                      : 'text-gray-700 hover:text-blue-600 hover:scale-105 group'
                   }`}
                 >
                   {item.label}
-                  <span 
-                    className={`absolute bottom-0 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                      isActive(item.href) 
-                        ? 'w-full' 
-                        : 'w-0 group-hover:w-full'
-                    }`}
-                  ></span>
+                  {!isActive(item.href) && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-blue-600 transition-all duration-300 w-0 group-hover:w-full"></span>
+                  )}
+                  {isActive(item.href) && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-blue-600 w-full"></span>
+                  )}
                 </a>
               ))}
               <a 
@@ -113,13 +89,7 @@ export default function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => {
-                  if (item.href.startsWith('/#')) {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium transition-colors rounded-lg ${
                   isActive(item.href)
                     ? 'text-blue-600 bg-blue-50'
