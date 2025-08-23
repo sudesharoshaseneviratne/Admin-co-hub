@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
+    "critters": "^0.0.23",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"

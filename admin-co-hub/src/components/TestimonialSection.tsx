@@ -35,7 +35,7 @@ export default function TestimonialSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-gray-50 rounded-xl p-8">
-              <div className="text-blue-600 text-4xl mb-4">"</div>
+              <div className="text-blue-600 text-4xl mb-4">&ldquo;</div>
               <p className="text-gray-700 mb-6 italic">
                 {testimonial.quote}
               </p>

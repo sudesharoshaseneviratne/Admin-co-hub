@@ -1,35 +1,17 @@
 import ContactForm from '@/components/ContactForm';
+import Navigation from '@/components/Navigation';
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="text-2xl font-bold text-blue-600">
-                <a href="/">Admin & Co Hub</a>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a href="/services" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
-                <a href="#" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">How It Works</a>
-                <a href="#" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
-                <a href="#" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Success Stories</a>
-                <a href="/contact" className="text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Let's Discuss Your Business Needs
+            Let&apos;s Discuss Your Business Needs
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to streamline your operations? Get in touch for a free consultation 

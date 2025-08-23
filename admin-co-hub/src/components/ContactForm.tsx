@@ -43,7 +43,7 @@ export default function ContactForm() {
         </div>
         <h3 className="text-xl font-semibold text-green-800 mb-2">Thank You!</h3>
         <p className="text-green-700">
-          We've received your inquiry and will get back to you within 24 hours.
+          We&apos;ve received your inquiry and will get back to you within 24 hours.
         </p>
       </div>
     );
@@ -162,7 +162,7 @@ export default function ContactForm() {
       </button>
 
       <p className="text-sm text-gray-600 text-center">
-        We'll respond within 24 hours. Your information is kept confidential.
+        We&apos;ll respond within 24 hours. Your information is kept confidential.
       </p>
     </form>
   );
