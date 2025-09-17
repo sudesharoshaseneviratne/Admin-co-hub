@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function LoadingScreen() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,12 +35,16 @@ export default function LoadingScreen() {
         {/* Animated Logo */}
         <div className="relative mb-6">
           <div className="w-20 h-20 mx-auto mb-6 relative">
-            <div className="absolute inset-0 bg-blue-600 rounded-full animate-ping opacity-30"></div>
-            <div className="absolute inset-2 bg-blue-600 rounded-full animate-pulse opacity-60"></div>
-            <div className="absolute inset-4 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+            <div className="absolute inset-0 bg-blue-600/20 rounded-full animate-ping"></div>
+            <div className="absolute inset-2 bg-blue-600/40 rounded-full animate-pulse"></div>
+            <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center shadow-lg animate-bounce">
+              <Image 
+                src="/logo-transparent.png" 
+                alt="Admin & Co. Hub Logo" 
+                width={48} 
+                height={48}
+                className="object-contain"
+              />
             </div>
           </div>
           

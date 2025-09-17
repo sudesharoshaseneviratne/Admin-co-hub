@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -32,14 +33,19 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="group flex items-center space-x-3 text-2xl font-bold text-blue-600 hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12">
-                  <span className="text-white text-lg animate-pulse">⚡</span>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 overflow-hidden">
+                  <Image 
+                    src="/logo-transparent.png" 
+                    alt="Admin & Co. Hub Logo" 
+                    width={40} 
+                    height={40}
+                    className="object-contain"
+                  />
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-bounce"></div>
               </div>
               <div className="flex flex-col">
                 <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Admin & Co Hub
+                  Admin & Co. Hub
                 </span>
                 <span className="text-xs text-gray-500 font-normal -mt-1">BPO Solutions</span>
               </div>
