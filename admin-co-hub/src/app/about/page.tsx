@@ -11,13 +11,17 @@ export default function About() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 pt-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection animation="fadeInUp">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+      <section className="bg-gradient-to-br from-teal-50 to-emerald-100 py-20 pt-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-teal-300 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-16 h-16 bg-emerald-300 rounded-full animate-pulse delay-1000"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection animation="fadeInUp" className="text-center mb-16">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
               About Admin & Co Hub
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Your trusted Australian BPO partner, combining local accountability with global efficiency
               to deliver exceptional business process outsourcing services.
             </p>
@@ -47,28 +51,28 @@ export default function About() {
             </AnimatedSection>
 
             <AnimatedSection animation="fadeInRight" delay={300}>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
+                    <div className="text-4xl font-bold text-teal-600 mb-2">
                       <AnimatedCounter end={200} suffix="+" />
                     </div>
                     <div className="text-gray-600">Happy Clients</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-green-600 mb-2">
+                    <div className="text-4xl font-bold text-emerald-600 mb-2">
                       <AnimatedCounter end={6} suffix=" Years" />
                     </div>
                     <div className="text-gray-600">Experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-purple-600 mb-2">
+                    <div className="text-4xl font-bold text-amber-600 mb-2">
                       <AnimatedCounter end={99} suffix=".9%" />
                     </div>
                     <div className="text-gray-600">Uptime</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-orange-600 mb-2">
+                    <div className="text-4xl font-bold text-slate-600 mb-2">
                       <AnimatedCounter end={24} suffix="/7" />
                     </div>
                     <div className="text-gray-600">Support</div>
@@ -91,7 +95,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedSection animation="fadeInUp" delay={100}>
               <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-6">
                   <span className="text-2xl">🤝</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Trust & Transparency</h3>
@@ -104,7 +108,7 @@ export default function About() {
 
             <AnimatedSection animation="fadeInUp" delay={200}>
               <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
                   <span className="text-2xl">🎯</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Excellence in Execution</h3>
@@ -117,7 +121,7 @@ export default function About() {
 
             <AnimatedSection animation="fadeInUp" delay={300}>
               <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
                   <span className="text-2xl">🚀</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Innovation & Growth</h3>
@@ -152,7 +156,7 @@ export default function About() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Michael Chen</h3>
-                <p className="text-blue-600 font-medium mb-3">CEO & Founder</p>
+                <p className="text-teal-600 font-medium mb-3">CEO & Founder</p>
                 <p className="text-gray-600">
                   15+ years in business operations and process optimization. Former McKinsey consultant
                   with expertise in scaling Australian businesses.
@@ -172,7 +176,7 @@ export default function About() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sarah Williams</h3>
-                <p className="text-green-600 font-medium mb-3">COO</p>
+                <p className="text-emerald-600 font-medium mb-3">COO</p>
                 <p className="text-gray-600">
                   Operations expert with 12+ years managing large-scale BPO implementations.
                   Specializes in quality assurance and client success.
@@ -192,7 +196,7 @@ export default function About() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">David Kumar</h3>
-                <p className="text-purple-600 font-medium mb-3">CTO</p>
+                <p className="text-amber-600 font-medium mb-3">CTO</p>
                 <p className="text-gray-600">
                   Technology leader with expertise in automation, AI integration, and secure
                   data management systems for enterprise clients.
@@ -203,27 +207,33 @@ export default function About() {
         </div>
       </section>
 
+
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-16 h-16 bg-white rounded-full animate-pulse delay-1000"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <AnimatedSection animation="fadeInUp">
             <h2 className="text-4xl font-bold text-white mb-6">
               Ready to Partner with Us?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Join the growing number of Australian businesses that trust Admin & Co Hub
               for their outsourcing needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold inline-block"
+                className="bg-white text-teal-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold inline-block"
               >
                 Get Started Today
               </a>
               <a
                 href="/services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors text-lg font-semibold inline-block"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-teal-600 transition-colors text-lg font-semibold inline-block"
               >
                 View Our Services
               </a>
@@ -231,6 +241,7 @@ export default function About() {
           </AnimatedSection>
         </div>
       </section>
+
     </div>
   );
 }

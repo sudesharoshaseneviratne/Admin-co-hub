@@ -19,7 +19,7 @@ export default function Testimonials() {
     },
     {
       name: "David Chen",
-      position: "Operations Director", 
+      position: "Operations Director",
       company: "GrowthCorp",
       image: "DC",
       rating: 5,
@@ -82,12 +82,12 @@ export default function Testimonials() {
   ];
 
   const colorClasses = {
-    blue: "from-blue-50 to-blue-100 border-blue-200",
-    green: "from-green-50 to-green-100 border-green-200",
-    purple: "from-purple-50 to-purple-100 border-purple-200",
-    orange: "from-orange-50 to-orange-100 border-orange-200",
-    indigo: "from-indigo-50 to-indigo-100 border-indigo-200",
-    teal: "from-teal-50 to-teal-100 border-teal-200"
+    blue: "from-teal-50 to-teal-100 border-teal-200",
+    green: "from-emerald-50 to-emerald-100 border-emerald-200",
+    purple: "from-amber-50 to-amber-100 border-amber-200",
+    orange: "from-slate-50 to-slate-100 border-slate-200",
+    indigo: "from-teal-50 to-emerald-100 border-teal-200",
+    teal: "from-emerald-50 to-teal-100 border-emerald-200"
   };
 
   return (
@@ -95,14 +95,18 @@ export default function Testimonials() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 pt-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection animation="fadeInUp">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+      <section className="bg-gradient-to-br from-teal-50 to-emerald-100 py-20 pt-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-teal-300 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-16 h-16 bg-emerald-300 rounded-full animate-pulse delay-1000"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection animation="fadeInUp" className="text-center mb-16">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
               Success Stories
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Discover how Australian businesses have transformed their operations 
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Discover how Australian businesses have transformed their operations
               and achieved remarkable results with Admin & Co Hub.
             </p>
           </AnimatedSection>
@@ -117,7 +121,7 @@ export default function Testimonials() {
               <AnimatedSection key={index} animation="scaleIn" delay={index * 100}>
                 <div className="text-center">
                   <div className="text-4xl mb-2">{stat.icon}</div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">
+                  <div className="text-4xl font-bold text-teal-600 mb-2">
                     <AnimatedCounter end={stat.number} suffix={stat.suffix} />
                   </div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -142,9 +146,9 @@ export default function Testimonials() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <AnimatedSection 
-                key={index} 
-                animation="fadeInUp" 
+              <AnimatedSection
+                key={index}
+                animation="fadeInUp"
                 delay={index * 100}
                 className="group"
               >
@@ -187,7 +191,7 @@ export default function Testimonials() {
                     <div>
                       <div className="font-semibold text-gray-900">{testimonial.name}</div>
                       <div className="text-sm text-gray-600">{testimonial.position}</div>
-                      <div className="text-sm font-medium text-blue-600">{testimonial.company}</div>
+                      <div className="text-sm font-medium text-teal-600">{testimonial.company}</div>
                     </div>
                   </div>
                 </div>
@@ -209,18 +213,18 @@ export default function Testimonials() {
             </p>
           </AnimatedSection>
 
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-8 lg:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <AnimatedSection animation="fadeInLeft">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                  <div className="inline-flex items-center bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium">
                     🏆 Featured Success Story
                   </div>
                   <h3 className="text-3xl font-bold text-gray-900">
                     TechStart Melbourne: 300% Growth in 18 Months
                   </h3>
                   <p className="text-lg text-gray-600">
-                    Learn how our comprehensive BPO solutions helped this Melbourne-based tech startup 
+                    Learn how our comprehensive BPO solutions helped this Melbourne-based tech startup
                     scale from 10 to 50 employees while maintaining operational efficiency and reducing costs.
                   </p>
                   <div className="space-y-3">
@@ -249,9 +253,9 @@ export default function Testimonials() {
                       <span className="text-gray-700">Achieved 99.9% accuracy in data management</span>
                     </div>
                   </div>
-                  <a 
-                    href="/contact" 
-                    className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  <a
+                    href="/contact"
+                    className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold"
                   >
                     Read Full Case Study
                   </a>
@@ -261,26 +265,26 @@ export default function Testimonials() {
               <AnimatedSection animation="fadeInRight" delay={300}>
                 <div className="bg-white rounded-xl p-8 shadow-lg">
                   <div className="text-center mb-6">
-                    <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-3xl">📈</span>
                     </div>
                     <h4 className="text-xl font-bold text-gray-900">Growth Metrics</h4>
                   </div>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600 mb-1">300%</div>
+                      <div className="text-3xl font-bold text-teal-600 mb-1">300%</div>
                       <div className="text-sm text-gray-600">Revenue Growth</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-green-600 mb-1">40%</div>
+                      <div className="text-3xl font-bold text-emerald-600 mb-1">40%</div>
                       <div className="text-sm text-gray-600">Cost Reduction</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-purple-600 mb-1">18</div>
+                      <div className="text-3xl font-bold text-amber-600 mb-1">18</div>
                       <div className="text-sm text-gray-600">Months Timeline</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-orange-600 mb-1">50</div>
+                      <div className="text-3xl font-bold text-slate-600 mb-1">50</div>
                       <div className="text-sm text-gray-600">Team Members</div>
                     </div>
                   </div>
@@ -291,27 +295,32 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <section className="py-20 bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-16 h-16 bg-white rounded-full animate-pulse delay-1000"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <AnimatedSection animation="fadeInUp">
             <h2 className="text-4xl font-bold text-white mb-6">
               Ready to Write Your Success Story?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join the growing number of Australian businesses that have transformed 
+            <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join the growing number of Australian businesses that have transformed
               their operations with Admin & Co Hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/quote" 
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold"
+              <a
+                href="/quote"
+                className="bg-white text-teal-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold"
               >
                 Get Your Custom Quote
               </a>
-              <a 
-                href="/contact" 
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors text-lg font-semibold"
+              <a
+                href="/contact"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-teal-600 transition-colors text-lg font-semibold"
               >
                 Schedule Consultation
               </a>
@@ -319,6 +328,7 @@ export default function Testimonials() {
           </AnimatedSection>
         </div>
       </section>
+
     </div>
   );
 }

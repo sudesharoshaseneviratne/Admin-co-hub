@@ -27,7 +27,7 @@ export default function Quote() {
 
   const services = [
     'Virtual Assistance',
-    'Back-Office Operations', 
+    'Back-Office Operations',
     'Data Management',
     'Customer Support',
     'Document Processing',
@@ -48,7 +48,7 @@ export default function Quote() {
     const updatedServices = formData.services.includes(service)
       ? formData.services.filter(s => s !== service)
       : [...formData.services, service];
-    
+
     setFormData({
       ...formData,
       services: updatedServices
@@ -58,7 +58,7 @@ export default function Quote() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -88,42 +88,42 @@ export default function Quote() {
               </div>
               <h1 className="text-4xl font-bold text-green-800 mb-4">Quote Request Submitted!</h1>
               <p className="text-xl text-green-700 mb-6">
-                Thank you for your detailed information. Our team will analyze your requirements and 
+                Thank you for your detailed information. Our team will analyze your requirements and
                 prepare a customized proposal for your business.
               </p>
               <div className="bg-white rounded-xl p-6 mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">What happens next?</h3>
                 <div className="space-y-3 text-left">
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-blue-600 font-semibold text-sm">1</span>
+                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-teal-600 font-semibold text-sm">1</span>
                     </div>
                     <span className="text-gray-700">Our team reviews your requirements (within 2 hours)</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-blue-600 font-semibold text-sm">2</span>
+                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-teal-600 font-semibold text-sm">2</span>
                     </div>
                     <span className="text-gray-700">We prepare a detailed proposal and pricing (within 24 hours)</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-blue-600 font-semibold text-sm">3</span>
+                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-teal-600 font-semibold text-sm">3</span>
                     </div>
                     <span className="text-gray-700">Schedule a consultation call to discuss details</span>
                   </div>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  href="/" 
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                <Link
+                  href="/"
+                  className="bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold"
                 >
                   Return Home
                 </Link>
-                <a 
-                  href="/services" 
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors font-semibold"
+                <a
+                  href="/services"
+                  className="border-2 border-teal-600 text-teal-600 px-8 py-3 rounded-lg hover:bg-teal-600 hover:text-white transition-colors font-semibold"
                 >
                   Learn More About Our Services
                 </a>
@@ -139,40 +139,24 @@ export default function Quote() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 pt-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection animation="fadeInUp">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Get Your Custom Quote
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Tell us about your business needs and we&apos;ll create a tailored solution 
-              with transparent pricing just for you.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
 
       {/* Quote Form */}
-      <section className="py-20">
+      <section className="pt-30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Progress Bar */}
           <div className="mb-12">
             <div className="flex items-center justify-center mb-4">
               {[1, 2, 3].map((step) => (
                 <div key={step} className="flex items-center">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
-                    currentStep >= step 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-gray-200 text-gray-600'
-                  }`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${currentStep >= step
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-gray-200 text-gray-600'
+                    }`}>
                     {step}
                   </div>
                   {step < 3 && (
-                    <div className={`w-16 h-1 mx-2 ${
-                      currentStep > step ? 'bg-blue-600' : 'bg-gray-200'
-                    }`}></div>
+                    <div className={`w-16 h-1 mx-2 ${currentStep > step ? 'bg-teal-600' : 'bg-gray-200'
+                      }`}></div>
                   )}
                 </div>
               ))}
@@ -181,8 +165,8 @@ export default function Quote() {
               <span className="text-sm text-gray-600">
                 Step {currentStep} of 3: {
                   currentStep === 1 ? 'Basic Information' :
-                  currentStep === 2 ? 'Service Requirements' :
-                  'Project Details'
+                    currentStep === 2 ? 'Service Requirements' :
+                      'Project Details'
                 }
               </span>
             </div>
@@ -193,7 +177,7 @@ export default function Quote() {
             {currentStep === 1 && (
               <AnimatedSection animation="fadeInUp">
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">Basic Information</h2>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -209,7 +193,7 @@ export default function Quote() {
                       placeholder="Your full name"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address *
@@ -241,7 +225,7 @@ export default function Quote() {
                       placeholder="Your company name"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number
@@ -279,7 +263,7 @@ export default function Quote() {
                       <option value="other">Other</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Company Size
@@ -306,7 +290,7 @@ export default function Quote() {
             {currentStep === 2 && (
               <AnimatedSection animation="fadeInUp">
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">Service Requirements</h2>
-                
+
                 <div className="mb-8">
                   <label className="block text-sm font-medium text-gray-700 mb-4">
                     Which services are you interested in? (Select all that apply)
@@ -323,18 +307,16 @@ export default function Quote() {
                         />
                         <label
                           htmlFor={service}
-                          className={`block p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                            formData.services.includes(service)
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-gray-200 hover:border-blue-300'
-                          }`}
+                          className={`block p-4 border-2 rounded-lg cursor-pointer transition-all ${formData.services.includes(service)
+                            ? 'border-teal-500 bg-teal-50 text-teal-700'
+                            : 'border-gray-200 hover:border-teal-300'
+                            }`}
                         >
                           <div className="flex items-center">
-                            <div className={`w-5 h-5 rounded border-2 mr-3 flex items-center justify-center ${
-                              formData.services.includes(service)
-                                ? 'border-blue-500 bg-blue-500'
-                                : 'border-gray-300'
-                            }`}>
+                            <div className={`w-5 h-5 rounded border-2 mr-3 flex items-center justify-center ${formData.services.includes(service)
+                              ? 'border-teal-500 bg-teal-500'
+                              : 'border-gray-300'
+                              }`}>
                               {formData.services.includes(service) && (
                                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -368,7 +350,7 @@ export default function Quote() {
                       <option value="6-months+">6+ months</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Monthly Budget Range
@@ -395,7 +377,7 @@ export default function Quote() {
             {currentStep === 3 && (
               <AnimatedSection animation="fadeInUp">
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">Project Details</h2>
-                
+
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Project Description *
@@ -446,11 +428,10 @@ export default function Quote() {
               <button
                 type="button"
                 onClick={prevStep}
-                className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                  currentStep === 1
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                className={`px-6 py-3 rounded-lg font-semibold transition-colors ${currentStep === 1
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
                 disabled={currentStep === 1}
               >
                 Previous
@@ -460,7 +441,7 @@ export default function Quote() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold"
                 >
                   Next Step
                 </button>
@@ -468,7 +449,7 @@ export default function Quote() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 disabled:bg-blue-400 transition-colors font-semibold"
+                  className="bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 disabled:bg-teal-400 transition-colors font-semibold"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
                 </button>
