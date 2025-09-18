@@ -26,7 +26,7 @@ export default function LoadingScreen() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-500">
       {/* Transparent blurred background */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-md"></div>
       
@@ -49,7 +49,7 @@ export default function LoadingScreen() {
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 mb-2 animate-fade-in">
-            Admin & Co Hub
+            Admin & Co. Hub
           </h1>
           <p className="text-gray-600 animate-fade-in-delay">
             Streamlined Outsourcing Solutions

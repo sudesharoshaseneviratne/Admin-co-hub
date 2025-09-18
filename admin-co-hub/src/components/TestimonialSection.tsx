@@ -1,7 +1,7 @@
 export default function TestimonialSection() {
   const testimonials = [
     {
-      quote: "Admin & Co Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.",
+      quote: "Admin & Co. Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.",
       author: "Sarah Mitchell",
       role: "CEO, TechStart Melbourne",
       company: "TechStart"

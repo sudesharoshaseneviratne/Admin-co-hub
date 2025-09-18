@@ -13,13 +13,13 @@ export default function Footer() {
             <div className="flex items-center mb-3">
               <Image 
                 src="/logo-transparent.png" 
-                alt="Admin & Co Hub Logo" 
+                alt="Admin & Co. Hub Logo" 
                 width={32}
                 height={32}
                 className="mr-2"
               />
               <div className="text-xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
-                Admin & Co Hub
+                Admin & Co. Hub
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -89,7 +89,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-6 pt-4 text-center text-gray-400">
           <AnimatedSection animation="fadeInUp" delay={400}>
             <p className="text-sm hover:text-white transition-colors">
-              &copy; 2025 Admin & Co Hub. All rights reserved.
+              &copy; 2025 Admin & Co. Hub. All rights reserved.
               <span className="inline-block animate-pulse ml-2">🇦🇺</span>
             </p>
             <p className="text-xs text-gray-500 mt-1 hover:text-gray-300 transition-colors">
