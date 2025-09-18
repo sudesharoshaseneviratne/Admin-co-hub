@@ -1,4 +1,5 @@
 import AnimatedSection from './AnimatedSection';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -10,10 +11,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <AnimatedSection animation="fadeInLeft">
             <div className="flex items-center mb-3">
-              <img 
+              <Image 
                 src="/logo-transparent.png" 
                 alt="Admin & Co Hub Logo" 
-                className="w-8 h-8 mr-2"
+                width={32}
+                height={32}
+                className="mr-2"
               />
               <div className="text-xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
                 Admin & Co Hub
