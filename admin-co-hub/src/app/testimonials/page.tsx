@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedCounter from '@/components/AnimatedCounter';
@@ -186,9 +187,11 @@ export default function Testimonials() {
                   {/* Author */}
                   <div className="flex items-center pt-4 border-t border-gray-200">
                     <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm overflow-hidden">
-                      <img
+                      <Image
                         src={testimonial.image}
                         alt={testimonial.name}
+                        width={48}
+                        height={48}
                         className="w-full h-full object-cover rounded-full"
                         onError={(e) => {
                           // Fallback to initials if image fails to load

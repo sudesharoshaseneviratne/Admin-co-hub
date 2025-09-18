@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import LoadingScreen from '@/components/LoadingScreen';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import FloatingElements from '@/components/FloatingElements';
 import ParticleBackground from '@/components/ParticleBackground';
-import ScrollToTop from '@/components/ScrollToTop';
+
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
@@ -379,9 +380,11 @@ export default function Home() {
                   </p>
                   <div className="flex items-center mt-auto">
                     <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-teal-200 group-hover:ring-teal-300 transition-all">
-                      <img
+                      <Image
                         src="/testimonials/sarah-mitchell.jpg"
                         alt="Sarah Mitchell"
+                        width={48}
+                        height={48}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -402,9 +405,11 @@ export default function Home() {
                   </p>
                   <div className="flex items-center mt-auto">
                     <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-emerald-200 group-hover:ring-emerald-300 transition-all">
-                      <img
+                      <Image
                         src="/testimonials/david-chen.jpg"
                         alt="David Chen"
+                        width={48}
+                        height={48}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -425,9 +430,11 @@ export default function Home() {
                   </p>
                   <div className="flex items-center mt-auto">
                     <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-amber-200 group-hover:ring-amber-300 transition-all">
-                      <img
+                      <Image
                         src="/testimonials/emma-thompson.jpg"
                         alt="Emma Thompson"
+                        width={48}
+                        height={48}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -479,7 +486,6 @@ export default function Home() {
 
         <Footer />
 
-        <ScrollToTop />
         <Chatbot />
       </div>
     </>
