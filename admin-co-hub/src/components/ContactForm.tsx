@@ -156,7 +156,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-text-teal-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 disabled:bg-blue-400 transition-colors font-semibold text-lg"
+        className="w-full bg-teal-600 text-white py-4 px-6 rounded-lg hover:bg-teal-700 disabled:bg-teal-400 transition-colors font-semibold text-lg"
       >
         {isSubmitting ? 'Sending...' : 'Send Inquiry'}
       </button>

@@ -63,7 +63,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-text-teal-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+          <button className="bg-teal-600 text-white px-8 py-4 rounded-lg hover:bg-teal-700 transition-colors text-lg font-semibold">
             Start Your Journey Today
           </button>
         </div>

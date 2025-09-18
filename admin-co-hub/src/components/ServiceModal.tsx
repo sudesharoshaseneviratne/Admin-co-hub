@@ -33,7 +33,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
   if (!isOpen) return null;
 
   const colorClasses = {
-    blue: "bg-blue-50 border-blue-200 text-text-teal-600",
+    blue: "bg-blue-50 border-blue-200 text-teal-600",
     green: "bg-green-50 border-green-200 text-green-600", 
     purple: "bg-purple-50 border-purple-200 text-purple-600",
     orange: "bg-orange-50 border-orange-200 text-orange-600"
@@ -143,7 +143,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                 {details.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                      <svg className="w-3 h-3 text-text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -158,7 +158,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           {details.pricing && (
             <div className="mb-8 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Pricing</h3>
-              <p className="text-2xl font-bold text-text-teal-600 mb-2">{details.pricing}</p>
+              <p className="text-2xl font-bold text-teal-600 mb-2">{details.pricing}</p>
               <p className="text-sm text-gray-600">
                 Final pricing depends on specific requirements and volume. Contact us for a detailed quote.
               </p>
@@ -169,13 +169,13 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
               href="/quote" 
-              className="bg-text-teal-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-center flex-1"
+              className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold text-center flex-1"
             >
               Get Custom Quote
             </a>
             <a 
               href="/contact" 
-              className="border-2 border-text-teal-600 text-text-teal-600 px-6 py-3 rounded-lg hover:bg-text-teal-600 hover:text-white transition-colors font-semibold text-center flex-1"
+              className="border-2 border-teal-600 text-teal-600 px-6 py-3 rounded-lg hover:bg-teal-600 hover:text-white transition-colors font-semibold text-center flex-1"
             >
               Discuss Requirements
             </a>
