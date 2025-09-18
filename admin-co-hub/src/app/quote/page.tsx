@@ -430,7 +430,7 @@ export default function Quote() {
                 onClick={prevStep}
                 className={`px-6 py-3 rounded-lg font-semibold transition-colors ${currentStep === 1
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  : 'bg-gray-200 text-teal-700 hover:bg-gray-300'
                   }`}
                 disabled={currentStep === 1}
               >
