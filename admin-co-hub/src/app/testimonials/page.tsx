@@ -10,9 +10,9 @@ export default function Testimonials() {
       name: "Sarah Mitchell",
       position: "CEO",
       company: "TechStart Melbourne",
-      image: "SM",
+      image: "/testimonials/sarah-mitchell.jpg",
       rating: 5,
-      text: "Admin & Co Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency. We&apos;ve seen a 40% reduction in administrative overhead since partnering with them.",
+      text: "Admin & Co. Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency. We&apos;ve seen a 40% reduction in administrative overhead since partnering with them.",
       results: ["40% cost reduction", "3x faster processing", "99.9% accuracy rate"],
       industry: "Technology",
       color: "blue"
@@ -21,7 +21,7 @@ export default function Testimonials() {
       name: "David Chen",
       position: "Operations Director",
       company: "GrowthCorp",
-      image: "DC",
+      image: "/testimonials/david-chen.jpg",
       rating: 5,
       text: "The scalability and reliability of their services allowed us to focus on growth while they handled our administrative complexities seamlessly. Their 24/7 support has been invaluable for our expanding operations.",
       results: ["24/7 support coverage", "50% faster response times", "Zero downtime"],
@@ -32,7 +32,7 @@ export default function Testimonials() {
       name: "Emma Thompson",
       position: "Founder",
       company: "InnovateLab",
-      image: "ET",
+      image: "/testimonials/emma-thompson.jpg",
       rating: 5,
       text: "Outstanding customer service and attention to detail. They feel like an extension of our team rather than an external provider. The quality of work and communication has exceeded our expectations.",
       results: ["98% client satisfaction", "30% productivity increase", "Same-day turnaround"],
@@ -43,9 +43,9 @@ export default function Testimonials() {
       name: "Michael Rodriguez",
       position: "Managing Director",
       company: "Retail Solutions AU",
-      image: "MR",
+      image: "/testimonials/michael-rodriguez.jpg",
       rating: 5,
-      text: "Admin & Co Hub's data management services have revolutionized how we handle customer information. Their security protocols and accuracy standards are exactly what we needed for compliance.",
+      text: "Admin & Co. Hub's data management services have revolutionized how we handle customer information. Their security protocols and accuracy standards are exactly what we needed for compliance.",
       results: ["100% compliance rate", "60% faster data processing", "Zero security incidents"],
       industry: "Retail",
       color: "orange"
@@ -54,7 +54,7 @@ export default function Testimonials() {
       name: "Lisa Wang",
       position: "COO",
       company: "FinanceFirst",
-      image: "LW",
+      image: "/testimonials/lisa-wang.jpg",
       rating: 5,
       text: "Their virtual assistance team has become an integral part of our operations. The level of professionalism and expertise they bring is remarkable. We couldn't imagine running our business without them now.",
       results: ["5 dedicated VAs", "35% cost savings", "24/7 availability"],
@@ -65,9 +65,9 @@ export default function Testimonials() {
       name: "James Patterson",
       position: "CEO",
       company: "PropertyPro",
-      image: "JP",
+      image: "/testimonials/james-patterson.jpg",
       rating: 5,
-      text: "The customer support services provided by Admin & Co Hub have significantly improved our client satisfaction scores. Their team represents our brand perfectly and handles complex queries with expertise.",
+      text: "The customer support services provided by Admin & Co. Hub have significantly improved our client satisfaction scores. Their team represents our brand perfectly and handles complex queries with expertise.",
       results: ["95% satisfaction score", "50% faster resolution", "Multi-channel support"],
       industry: "Real Estate",
       color: "teal"
@@ -107,7 +107,7 @@ export default function Testimonials() {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover how Australian businesses have transformed their operations
-              and achieved remarkable results with Admin & Co Hub.
+              and achieved remarkable results with Admin & Co. Hub.
             </p>
           </AnimatedSection>
         </div>
@@ -185,8 +185,21 @@ export default function Testimonials() {
 
                   {/* Author */}
                   <div className="flex items-center pt-4 border-t border-gray-200">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
-                      <span className="text-gray-600 font-semibold">{testimonial.image}</span>
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm overflow-hidden">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover rounded-full"
+                        onError={(e) => {
+                          // Fallback to initials if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<span class="text-gray-600 font-semibold">${testimonial.name.split(' ').map(n => n[0]).join('')}</span>`;
+                          }
+                        }}
+                      />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">{testimonial.name}</div>
@@ -309,7 +322,7 @@ export default function Testimonials() {
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Join the growing number of Australian businesses that have transformed
-              their operations with Admin & Co Hub.
+              their operations with Admin & Co. Hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

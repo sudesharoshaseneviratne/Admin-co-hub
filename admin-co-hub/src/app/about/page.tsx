@@ -19,7 +19,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection animation="fadeInUp" className="text-center mb-16">
             <h1 className="text-5xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
-              About Admin & Co Hub
+              About Admin & Co. Hub
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Your trusted Australian BPO partner, combining local accountability with global efficiency
@@ -36,7 +36,7 @@ export default function About() {
             <AnimatedSection animation="fadeInLeft">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2018, Admin & Co Hub emerged from a simple observation: Australian businesses
+                Founded in 2018, Admin & Co. Hub emerged from a simple observation: Australian businesses
                 needed outsourcing solutions that understood their unique market requirements while
                 delivering world-class efficiency.
               </p>
@@ -140,7 +140,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection animation="fadeInUp" className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600">Meet the experts behind Admin & Co Hub</p>
+            <p className="text-xl text-gray-600">Meet the experts behind Admin & Co. Hub</p>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -221,7 +221,7 @@ export default function About() {
               Ready to Partner with Us?
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join the growing number of Australian businesses that trust Admin & Co Hub
+              Join the growing number of Australian businesses that trust Admin & Co. Hub
               for their outsourcing needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

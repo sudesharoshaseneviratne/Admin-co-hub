@@ -9,6 +9,8 @@ import ParticleBackground from '@/components/ParticleBackground';
 import ScrollToTop from '@/components/ScrollToTop';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Chatbot from '@/components/Chatbot';
+import { MdSecurity, MdGavel, MdStar, MdAccessTime, MdPeople, MdSettings, MdBarChart, MdHeadset, MdSearch, MdDescription, MdBolt, MdTrendingUp } from 'react-icons/md';
 
 export default function Home() {
   useEffect(() => {
@@ -56,7 +58,7 @@ export default function Home() {
                   <a href="/quote" className="bg-teal-600 text-white px-8 py-4 rounded-lg hover:bg-teal-700 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group text-center">
                     Get Started Today
                   </a>
-                  <a href="/how-it-works" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-teal-600 hover:text-teal-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-lg text-center">
+                  <a href="/how-it-works" className="border-2 border-gray-500 text-gray-500 px-8 py-4 rounded-lg hover:border-teal-600 hover:text-teal-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-lg text-center">
                     Learn How It Works
                   </a>
                 </div>
@@ -65,7 +67,7 @@ export default function Home() {
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-teal-100">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-                      <svg className="w-8 h-8 text-teal-600 animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -101,7 +103,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <AnimatedSection animation="fadeInUp" className="text-center mb-16">
               <h2 className="text-4xl font-bold text-teal-900 mb-4 bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-800 bg-clip-text text-transparent">
-                Why Choose Admin & Co Hub?
+                Why Choose Admin & Co. Hub?
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 We combine Australian business standards with global efficiency to deliver exceptional BPO services
@@ -168,9 +170,7 @@ export default function Home() {
                 <div className="text-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-teal-100 group-hover:border-teal-300 h-40 flex flex-col justify-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-teal-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-teal-200 group-hover:to-teal-300 transition-all duration-300">
-                      <svg className="w-8 h-8 text-teal-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
+                      <MdSecurity className="w-8 h-8 text-teal-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-teal-600 transition-colors">ISO 27001</h3>
                     <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Certified</p>
@@ -179,9 +179,7 @@ export default function Home() {
                 <div className="text-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-emerald-100 group-hover:border-emerald-300 h-40 flex flex-col justify-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all duration-300">
-                      <svg className="w-8 h-8 text-emerald-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                      </svg>
+                      <MdGavel className="w-8 h-8 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors">Australian Privacy</h3>
                     <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Act Compliant</p>
@@ -190,9 +188,7 @@ export default function Home() {
                 <div className="text-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-amber-100 group-hover:border-amber-300 h-40 flex flex-col justify-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-amber-200 group-hover:to-amber-300 transition-all duration-300">
-                      <svg className="w-8 h-8 text-amber-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                      </svg>
+                      <MdStar className="w-8 h-8 text-amber-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-amber-600 transition-colors">
                       <AnimatedCounter end={200} suffix="+" />
@@ -203,9 +199,7 @@ export default function Home() {
                 <div className="text-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-slate-100 group-hover:border-slate-300 h-40 flex flex-col justify-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-slate-200 group-hover:to-slate-300 transition-all duration-300">
-                      <svg className="w-8 h-8 text-slate-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <MdAccessTime className="w-8 h-8 text-slate-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-slate-600 transition-colors">24/7</h3>
                     <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Support</p>
@@ -225,7 +219,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <AnimatedSection animation="fadeInUp" className="text-center mb-16">
               <h2 className="text-4xl font-bold text-teal-900 mb-4 bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-800 bg-clip-text text-transparent">
-                How Admin & Co Hub Works
+                How Admin & Co. Hub Works
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Our proven 4-step process ensures smooth integration and measurable results for your business
@@ -237,7 +231,7 @@ export default function Home() {
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-teal-100">
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-teal-100 to-teal-200 rounded-full mb-6">
-                      <span className="text-2xl">🔍</span>
+                      <MdSearch className="w-8 h-8 text-teal-600" />
                     </div>
                     <div className="text-teal-600 font-bold text-sm mb-2 animate-pulse">STEP 01</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors">Discovery</h3>
@@ -257,7 +251,7 @@ export default function Home() {
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-emerald-100">
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full mb-6">
-                      <span className="text-2xl">📋</span>
+                      <MdDescription className="w-8 h-8 text-emerald-600" />
                     </div>
                     <div className="text-emerald-600 font-bold text-sm mb-2 animate-pulse">STEP 02</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors">Strategy</h3>
@@ -277,7 +271,7 @@ export default function Home() {
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-amber-100">
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full mb-6">
-                      <span className="text-2xl">⚡</span>
+                      <MdBolt className="w-8 h-8 text-amber-600" />
                     </div>
                     <div className="text-amber-600 font-bold text-sm mb-2 animate-pulse">STEP 03</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-amber-600 transition-colors">Implementation</h3>
@@ -297,7 +291,7 @@ export default function Home() {
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform group-hover:scale-105 border border-slate-100">
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mb-6">
-                      <span className="text-2xl">📈</span>
+                      <MdTrendingUp className="w-8 h-8 text-slate-600" />
                     </div>
                     <div className="text-slate-600 font-bold text-sm mb-2 animate-pulse">STEP 04</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-slate-600 transition-colors">Optimization</h3>
@@ -309,7 +303,6 @@ export default function Home() {
 
             <AnimatedSection animation="fadeInUp" delay={500} className="text-center mt-12">
               <a href="/quote" className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-8 py-4 rounded-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group inline-block">
-                <span className="inline-block group-hover:animate-bounce mr-2">🚀</span>
                 Start Your Journey Today
               </a>
             </AnimatedSection>
@@ -334,27 +327,32 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: "Virtual Assistance", desc: "Dedicated admin support", icon: "👥", color: "blue" },
-                { title: "Back-Office Operations", desc: "Process optimization", icon: "⚙️", color: "green" },
-                { title: "Data Management", desc: "Secure data processing", icon: "📊", color: "purple" },
-                { title: "Customer Support", desc: "24/7 client services", icon: "🎧", color: "orange" }
-              ].map((service, index) => (
-                <AnimatedSection
-                  key={index}
-                  animation="scaleIn"
-                  delay={index * 100}
-                  className="group"
-                >
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100">
-                    <div className="text-4xl mb-4 group-hover:animate-bounce transition-all duration-300">{service.icon}</div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">{service.title}</h3>
-                    <p className="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors">{service.desc}</p>
-                    <a href="/services" className="text-teal-600 font-medium hover:text-teal-700 transition-colors group-hover:animate-pulse">
-                      Learn More →
-                    </a>
-                  </div>
-                </AnimatedSection>
-              ))}
+                { title: "Virtual Assistance", desc: "Dedicated admin support", icon: MdPeople, color: "teal" },
+                { title: "Back-Office Operations", desc: "Process optimization", icon: MdSettings, color: "emerald" },
+                { title: "Data Management", desc: "Secure data processing", icon: MdBarChart, color: "blue" },
+                { title: "Customer Support", desc: "24/7 client services", icon: MdHeadset, color: "amber" }
+              ].map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <AnimatedSection
+                    key={index}
+                    animation="scaleIn"
+                    delay={index * 100}
+                    className="group"
+                  >
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100">
+                      <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-teal-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-teal-200 group-hover:to-teal-300 transition-all duration-300">
+                        <IconComponent className="w-8 h-8 text-teal-600 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">{service.title}</h3>
+                      <p className="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors">{service.desc}</p>
+                      <a href="/services" className="text-teal-600 font-medium hover:text-teal-700 transition-colors group-hover:animate-pulse">
+                        Learn More →
+                      </a>
+                    </div>
+                  </AnimatedSection>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -372,16 +370,20 @@ export default function Home() {
               </p>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <AnimatedSection animation="fadeInLeft" delay={100} className="group">
-                <div className="bg-gradient-to-br from-gray-50 to-teal-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-teal-100">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+              <AnimatedSection animation="fadeInLeft" delay={100} className="group h-full">
+                <div className="bg-gradient-to-br from-gray-50 to-teal-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-teal-100 h-full flex flex-col">
                   <div className="text-teal-600 text-5xl mb-4 group-hover:animate-pulse">&ldquo;</div>
-                  <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors">
-                    Admin & Co Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.&rdquo;
+                  <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors flex-grow">
+                    Admin & Co. Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.&rdquo;
                   </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-teal-200 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-teal-600 font-semibold">SM</span>
+                  <div className="flex items-center mt-auto">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-teal-200 group-hover:ring-teal-300 transition-all">
+                      <img
+                        src="/testimonials/sarah-mitchell.jpg"
+                        alt="Sarah Mitchell"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">Sarah Mitchell</div>
@@ -392,15 +394,19 @@ export default function Home() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection animation="fadeInUp" delay={200} className="group">
-                <div className="bg-gradient-to-br from-gray-50 to-emerald-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-emerald-100">
+              <AnimatedSection animation="fadeInUp" delay={200} className="group h-full">
+                <div className="bg-gradient-to-br from-gray-50 to-emerald-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-emerald-100 h-full flex flex-col">
                   <div className="text-emerald-600 text-5xl mb-4 group-hover:animate-pulse">&ldquo;</div>
-                  <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors">
+                  <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors flex-grow">
                     The scalability and reliability of their services allowed us to focus on growth while they handled our administrative complexities seamlessly.&rdquo;
                   </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-emerald-600 font-semibold">DC</span>
+                  <div className="flex items-center mt-auto">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-emerald-200 group-hover:ring-emerald-300 transition-all">
+                      <img
+                        src="/testimonials/david-chen.jpg"
+                        alt="David Chen"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">David Chen</div>
@@ -411,15 +417,19 @@ export default function Home() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection animation="fadeInRight" delay={300} className="group">
-                <div className="bg-gradient-to-br from-gray-50 to-amber-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-amber-100">
+              <AnimatedSection animation="fadeInRight" delay={300} className="group h-full">
+                <div className="bg-gradient-to-br from-gray-50 to-amber-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-amber-100 h-full flex flex-col">
                   <div className="text-amber-600 text-5xl mb-4 group-hover:animate-pulse">&ldquo;</div>
-                  <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors">
+                  <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors flex-grow">
                     Outstanding customer service and attention to detail. They feel like an extension of our team rather than an external provider.&rdquo;
                   </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-amber-600 font-semibold">ET</span>
+                  <div className="flex items-center mt-auto">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-amber-200 group-hover:ring-amber-300 transition-all">
+                      <img
+                        src="/testimonials/emma-thompson.jpg"
+                        alt="Emma Thompson"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 group-hover:text-amber-600 transition-colors">Emma Thompson</div>
@@ -447,7 +457,7 @@ export default function Home() {
                 Ready to Streamline Your Operations?
               </h2>
               <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Join hundreds of Australian businesses that trust Admin & Co Hub for their outsourcing needs
+                Join hundreds of Australian businesses that trust Admin & Co. Hub for their outsourcing needs
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/quote" className="bg-white text-teal-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group text-center flex items-center justify-center">
@@ -470,6 +480,7 @@ export default function Home() {
         <Footer />
 
         <ScrollToTop />
+        <Chatbot />
       </div>
     </>
   );
