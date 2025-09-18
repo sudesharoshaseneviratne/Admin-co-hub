@@ -46,7 +46,7 @@ export default function HowItWorks() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
                     <span className="text-2xl">{step.icon}</span>
                   </div>
-                  <div className="text-blue-600 font-bold text-sm mb-2">STEP {step.step}</div>
+                  <div className="text-text-teal-600 font-bold text-sm mb-2">STEP {step.step}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
@@ -63,7 +63,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+          <button className="bg-text-teal-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
             Start Your Journey Today
           </button>
         </div>

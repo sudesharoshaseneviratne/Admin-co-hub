@@ -35,8 +35,8 @@ export default function LoadingScreen() {
         {/* Animated Logo */}
         <div className="relative mb-6">
           <div className="w-20 h-20 mx-auto mb-6 relative">
-            <div className="absolute inset-0 bg-blue-600/20 rounded-full animate-ping"></div>
-            <div className="absolute inset-2 bg-blue-600/40 rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 bg-text-teal-600/20 rounded-full animate-ping"></div>
+            <div className="absolute inset-2 bg-text-teal-600/40 rounded-full animate-pulse"></div>
             <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center shadow-lg animate-bounce">
               <Image 
                 src="/logo-transparent.png" 
@@ -58,9 +58,9 @@ export default function LoadingScreen() {
 
         {/* Simple loading dots instead of progress bar */}
         <div className="flex justify-center space-x-2">
-          <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
-          <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce delay-100"></div>
-          <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce delay-200"></div>
+          <div className="w-2 h-2 bg-text-teal-600 rounded-full animate-bounce"></div>
+          <div className="w-2 h-2 bg-text-teal-600 rounded-full animate-bounce delay-100"></div>
+          <div className="w-2 h-2 bg-text-teal-600 rounded-full animate-bounce delay-200"></div>
         </div>
       </div>
 

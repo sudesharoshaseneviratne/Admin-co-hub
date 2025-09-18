@@ -35,20 +35,20 @@ export default function TestimonialSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-gray-50 rounded-xl p-8">
-              <div className="text-blue-600 text-4xl mb-4">&ldquo;</div>
+              <div className="text-text-teal-600 text-4xl mb-4">&ldquo;</div>
               <p className="text-gray-700 mb-6 italic">
                 {testimonial.quote}
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-blue-600 font-semibold">
+                  <span className="text-text-teal-600 font-semibold">
                     {testimonial.author.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.author}</div>
                   <div className="text-sm text-gray-600">{testimonial.role}</div>
-                  <div className="text-sm text-blue-600">{testimonial.company}</div>
+                  <div className="text-sm text-text-teal-600">{testimonial.company}</div>
                 </div>
               </div>
             </div>

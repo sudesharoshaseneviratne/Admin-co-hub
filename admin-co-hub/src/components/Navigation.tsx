@@ -23,15 +23,15 @@ export default function Navigation() {
 
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md shadow-xl border-b border-blue-100/50 fixed w-full top-0 z-40 transition-all duration-500">
+    <nav className="bg-white/90 backdrop-blur-md shadow-xl border-b border-teal-100/50 fixed w-full top-0 z-40 transition-all duration-500">
       {/* Gradient accent line */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-amber-500"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link href="/" className="group flex items-center space-x-3 text-2xl font-bold text-blue-600 hover:scale-105 transition-all duration-300 cursor-pointer">
+            <Link href="/" className="group flex items-center space-x-3 text-2xl font-bold text-teal-600 hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="relative">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 overflow-hidden">
                   <Image 
@@ -44,7 +44,7 @@ export default function Navigation() {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-amber-600 bg-clip-text text-transparent">
                   Admin & Co. Hub
                 </span>
                 <span className="text-xs text-gray-500 font-normal -mt-1">BPO Solutions</span>
@@ -61,24 +61,24 @@ export default function Navigation() {
                     href={item.href}
                     className={`px-4 py-3 text-sm font-medium transition-all duration-300 relative rounded-xl group ${
                       isActive(item.href)
-                        ? 'text-blue-600 bg-blue-50/80 shadow-sm'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/50'
+                        ? 'text-teal-600 bg-teal-50/80 shadow-sm'
+                        : 'text-gray-700 hover:text-teal-600 hover:bg-teal-50/50'
                     }`}
                   >
                     <span className="relative z-10">{item.label}</span>
                     
                     {/* Active indicator */}
                     {isActive(item.href) && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-100/80 to-indigo-100/80 rounded-xl"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-100/80 to-emerald-100/80 rounded-xl"></div>
                     )}
                     
                     {/* Hover effect */}
                     {!isActive(item.href) && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/0 to-indigo-50/0 group-hover:from-blue-50/80 group-hover:to-indigo-50/80 rounded-xl transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-50/0 to-emerald-50/0 group-hover:from-teal-50/80 group-hover:to-emerald-50/80 rounded-xl transition-all duration-300"></div>
                     )}
                     
                     {/* Bottom accent line */}
-                    <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 ${
+                    <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-500 transition-all duration-300 ${
                       isActive(item.href) ? 'w-8' : 'w-0 group-hover:w-6'
                     }`}></div>
                   </a>
@@ -91,8 +91,8 @@ export default function Navigation() {
                   href="/quote" 
                   className={`px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform ${
                     pathname === '/quote'
-                      ? 'bg-blue-700 text-white'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      ? 'bg-teal-700 text-white'
+                      : 'bg-teal-600 text-white hover:bg-teal-700'
                   }`}
                 >
                   Get Quote
@@ -105,7 +105,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors rounded-xl hover:bg-blue-50/50 group"
+              className="relative p-2 text-gray-700 hover:text-teal-600 transition-colors rounded-xl hover:bg-teal-50/50 group"
             >
               <div className="w-6 h-6 relative">
                 <span className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${
@@ -127,7 +127,7 @@ export default function Navigation() {
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${
         isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="bg-white/95 backdrop-blur-md border-t border-blue-100/50 shadow-xl">
+        <div className="bg-white/95 backdrop-blur-md border-t border-teal-100/50 shadow-xl">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item, index) => (
               <a
@@ -136,16 +136,16 @@ export default function Navigation() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl relative group ${
                   isActive(item.href)
-                    ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-indigo-50/50'
+                    ? 'text-teal-600 bg-gradient-to-r from-teal-50 to-emerald-50 shadow-sm'
+                    : 'text-gray-700 hover:text-teal-600 hover:bg-gradient-to-r hover:from-teal-50/50 hover:to-emerald-50/50'
                 }`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <span className="flex items-center space-x-3">
                   <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     isActive(item.href) 
-                      ? 'bg-gradient-to-r from-blue-500 to-indigo-500' 
-                      : 'bg-gray-300 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-indigo-400'
+                      ? 'bg-gradient-to-r from-teal-500 to-emerald-500' 
+                      : 'bg-gray-300 group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-emerald-400'
                   }`}></div>
                   <span>{item.label}</span>
                 </span>
@@ -157,8 +157,8 @@ export default function Navigation() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${
                   pathname === '/quote'
-                    ? 'bg-blue-700 text-white'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                    ? 'bg-teal-700 text-white'
+                    : 'bg-teal-600 text-white hover:bg-teal-700'
                 }`}
               >
                 Get Quote

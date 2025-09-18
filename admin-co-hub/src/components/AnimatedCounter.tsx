@@ -55,7 +55,7 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '', pre
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={counterRef} className="text-2xl font-bold text-blue-600">
+    <div ref={counterRef} className="text-2xl font-bold text-text-teal-600">
       {prefix}{count}{suffix}
     </div>
   );
