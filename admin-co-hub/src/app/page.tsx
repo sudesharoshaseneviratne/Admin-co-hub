@@ -168,11 +168,11 @@ export default function Home() {
                 <div className="text-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-blue-100 group-hover:border-blue-300 h-40 flex flex-col justify-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-blue-200 group-hover:to-blue-300 transition-all duration-300">
-                      <svg className="w-8 h-8 text-text-teal-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 text-teal-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-text-teal-600 transition-colors">ISO 27001</h3>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-teal-600 transition-colors">ISO 27001</h3>
                     <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors">Certified</p>
                   </div>
                 </div>
@@ -239,8 +239,8 @@ export default function Home() {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mb-6">
                       <span className="text-2xl">🔍</span>
                     </div>
-                    <div className="text-text-teal-600 font-bold text-sm mb-2 animate-pulse">STEP 01</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-text-teal-600 transition-colors">Discovery</h3>
+                    <div className="text-teal-600 font-bold text-sm mb-2 animate-pulse">STEP 01</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors">Discovery</h3>
                     <p className="text-gray-600 group-hover:text-gray-700 transition-colors">We analyze your current processes and identify optimization opportunities</p>
                   </div>
                 </div>
@@ -347,9 +347,9 @@ export default function Home() {
                 >
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100">
                     <div className="text-4xl mb-4 group-hover:animate-bounce transition-all duration-300">{service.icon}</div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-text-teal-600 transition-colors">{service.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">{service.title}</h3>
                     <p className="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors">{service.desc}</p>
-                    <a href="/services" className="text-text-teal-600 font-medium hover:text-blue-700 transition-colors group-hover:animate-pulse">
+                    <a href="/services" className="text-teal-600 font-medium hover:text-teal-700 transition-colors group-hover:animate-pulse">
                       Learn More →
                     </a>
                   </div>
@@ -375,18 +375,18 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <AnimatedSection animation="fadeInLeft" delay={100} className="group">
                 <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-blue-100">
-                  <div className="text-text-teal-600 text-5xl mb-4 group-hover:animate-pulse">&ldquo;</div>
+                  <div className="text-teal-600 text-5xl mb-4 group-hover:animate-pulse">&ldquo;</div>
                   <p className="text-gray-700 mb-6 italic leading-relaxed group-hover:text-gray-800 transition-colors">
                     Admin & Co Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-text-teal-600 font-semibold">SM</span>
+                      <span className="text-teal-600 font-semibold">SM</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 group-hover:text-text-teal-600 transition-colors">Sarah Mitchell</div>
+                      <div className="font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">Sarah Mitchell</div>
                       <div className="text-sm text-gray-600">CEO, TechStart Melbourne</div>
-                      <div className="text-sm text-text-teal-600 font-medium">TechStart</div>
+                      <div className="text-sm text-teal-600 font-medium">TechStart</div>
                     </div>
                   </div>
                 </div>
@@ -456,7 +456,7 @@ export default function Home() {
                   </svg>
                   Get Your Free Consultation
                 </a>
-                <a href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-text-teal-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 text-center flex items-center justify-center group">
+                <a href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-teal-600 transition-all duration-300 text-lg font-semibold transform hover:scale-105 text-center flex items-center justify-center group">
                   <svg className="w-5 h-5 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
