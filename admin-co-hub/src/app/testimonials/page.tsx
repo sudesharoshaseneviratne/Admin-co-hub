@@ -84,14 +84,7 @@ export default function Testimonials() {
     { number: 6, suffix: " Years", label: "Industry Experience", icon: MdEmojiEvents }
   ];
 
-  const colorClasses = {
-    blue: "border-opacity-20",
-    green: "border-opacity-20",
-    purple: "border-opacity-20",
-    orange: "from-slate-50 to-slate-100 border-slate-200",
-    indigo: "border-opacity-20",
-    teal: "border-opacity-20"
-  };
+
 
   const getColorStyles = (color: string) => {
     switch (color) {
