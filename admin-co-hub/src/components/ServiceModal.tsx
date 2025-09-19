@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
+import type { MouseEvent } from 'react';
+import type { IconType } from 'react-icons';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -9,7 +11,7 @@ interface ServiceModalProps {
     title: string;
     description: string;
     features: string[];
-    icon: string;
+    icon: IconType;
     color: string;
     detailedDescription?: string;
     benefits?: string[];
@@ -32,11 +34,35 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
 
   if (!isOpen) return null;
 
-  const colorClasses = {
-    blue: "bg-blue-50 border-blue-200 text-teal-600",
-    green: "bg-green-50 border-green-200 text-green-600", 
-    purple: "bg-purple-50 border-purple-200 text-purple-600",
-    orange: "bg-orange-50 border-orange-200 text-orange-600"
+  const getColorStyles = (color: string) => {
+    switch(color) {
+      case 'blue':
+        return { 
+          backgroundColor: 'rgba(120, 179, 173, 0.1)', 
+          borderColor: 'rgba(120, 179, 173, 0.3)', 
+          color: 'rgb(120, 179, 173)' 
+        };
+      case 'green':
+        return { 
+          backgroundColor: 'rgba(80, 135, 137, 0.1)', 
+          borderColor: 'rgba(80, 135, 137, 0.3)', 
+          color: 'rgb(80, 135, 137)' 
+        };
+      case 'purple':
+        return { 
+          backgroundColor: 'rgba(202, 176, 154, 0.1)', 
+          borderColor: 'rgba(202, 176, 154, 0.3)', 
+          color: 'rgb(202, 176, 154)' 
+        };
+      case 'orange':
+        return { 
+          backgroundColor: 'rgba(100, 116, 139, 0.1)', 
+          borderColor: 'rgba(100, 116, 139, 0.3)', 
+          color: 'rgb(100, 116, 139)' 
+        };
+      default:
+        return {};
+    }
   };
 
   const serviceDetails = {
@@ -94,8 +120,8 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between">
           <div className="flex items-center">
-            <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${colorClasses[service.color as keyof typeof colorClasses]}`}>
-              <span className="text-2xl">{service.icon}</span>
+            <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 border-2" style={getColorStyles(service.color)}>
+              <service.icon className="text-2xl" />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">{service.title}</h2>
           </div>
@@ -126,7 +152,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {service.features.map((feature, index) => (
                 <div key={index} className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'rgb(80, 135, 137)' }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">{feature}</span>
@@ -142,8 +168,8 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
               <div className="space-y-3">
                 {details.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                      <svg className="w-3 h-3 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0" style={{ backgroundColor: 'rgba(120, 179, 173, 0.2)' }}>
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'rgb(120, 179, 173)' }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -158,7 +184,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           {details.pricing && (
             <div className="mb-8 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Pricing</h3>
-              <p className="text-2xl font-bold text-teal-600 mb-2">{details.pricing}</p>
+              <p className="text-2xl font-bold mb-2" style={{ color: 'rgb(120, 179, 173)' }}>{details.pricing}</p>
               <p className="text-sm text-gray-600">
                 Final pricing depends on specific requirements and volume. Contact us for a detailed quote.
               </p>
@@ -169,13 +195,25 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
               href="/quote" 
-              className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold text-center flex-1"
+              className="text-white px-6 py-3 rounded-lg transition-colors font-semibold text-center flex-1"
+              style={{ backgroundColor: 'rgb(120, 179, 173)' }}
+              onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(100, 159, 153)'}
+              onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)'}
             >
               Get Custom Quote
             </a>
             <a 
               href="/contact" 
-              className="border-2 border-teal-600 text-teal-600 px-6 py-3 rounded-lg hover:bg-teal-600 hover:text-white transition-colors font-semibold text-center flex-1"
+              className="border-2 px-6 py-3 rounded-lg transition-colors font-semibold text-center flex-1"
+              style={{ borderColor: 'rgb(120, 179, 173)', color: 'rgb(120, 179, 173)' }}
+              onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)';
+                e.currentTarget.style.color = 'white';
+              }}
+              onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'rgb(120, 179, 173)';
+              }}
             >
               Discuss Requirements
             </a>
