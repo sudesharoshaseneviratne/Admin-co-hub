@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import type { MouseEvent } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -23,14 +24,14 @@ export default function Navigation() {
 
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md shadow-xl border-b border-teal-100/50 fixed w-full top-0 z-40 transition-all duration-500">
+    <nav className="bg-white/90 backdrop-blur-md shadow-xl border-b fixed w-full top-0 z-40 transition-all duration-500" style={{ borderBottomColor: 'rgba(120, 179, 173, 0.2)' }}>
       {/* Gradient accent line */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link href="/" className="group flex items-center space-x-3 text-4xl font-bold text-teal-600 hover:scale-105 transition-all duration-300 cursor-pointer">
+            <Link href="/" className="group flex items-center space-x-3 text-4xl font-bold hover:scale-105 transition-all duration-300 cursor-pointer" style={{ color: 'rgb(120, 179, 173)' }}>
               <div className="flex flex-col">
                 <span className="text-[rgb(202,176,154)]">
                   Admin & Co. Hub
@@ -47,25 +48,36 @@ export default function Navigation() {
                   <a
                     href={item.href}
                     className={`px-4 py-3 text-sm font-medium transition-all duration-300 relative rounded-xl group ${isActive(item.href)
-                      ? 'text-teal-600 bg-teal-50/80 shadow-sm'
-                      : 'text-gray-700 hover:text-teal-600 hover:bg-teal-50/50'
+                      ? 'shadow-sm'
+                      : 'text-gray-700'
                       }`}
+                    style={isActive(item.href) 
+                      ? { color: 'rgb(120, 179, 173)', backgroundColor: 'rgba(120, 179, 173, 0.1)' }
+                      : {}
+                    }
+                    onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => {
+                      if (!isActive(item.href)) {
+                        e.currentTarget.style.color = 'rgb(120, 179, 173)';
+                        e.currentTarget.style.backgroundColor = 'rgba(120, 179, 173, 0.05)';
+                      }
+                    }}
+                    onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => {
+                      if (!isActive(item.href)) {
+                        e.currentTarget.style.color = 'rgb(55, 65, 81)';
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                      }
+                    }}
                   >
                     <span className="relative z-10">{item.label}</span>
 
                     {/* Active indicator */}
                     {isActive(item.href) && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-teal-100/80 to-emerald-100/80 rounded-xl"></div>
-                    )}
-
-                    {/* Hover effect */}
-                    {!isActive(item.href) && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-teal-50/0 to-emerald-50/0 group-hover:from-teal-50/80 group-hover:to-emerald-50/80 rounded-xl transition-all duration-300"></div>
+                      <div className="absolute inset-0 rounded-xl" style={{ background: 'linear-gradient(to right, rgba(120, 179, 173, 0.15), rgba(80, 135, 137, 0.15))' }}></div>
                     )}
 
                     {/* Bottom accent line */}
-                    <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-500 transition-all duration-300 ${isActive(item.href) ? 'w-8' : 'w-0 group-hover:w-6'
-                      }`}></div>
+                    <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-300 ${isActive(item.href) ? 'w-8' : 'w-0 group-hover:w-6'
+                      }`} style={{ background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))' }}></div>
                   </a>
                 </div>
               ))}
@@ -78,8 +90,8 @@ export default function Navigation() {
                   style={{
                     backgroundColor: pathname === '/quote' ? 'rgb(15, 27, 65)' : 'rgb(19, 34, 81)'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgb(15, 27, 65)'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = pathname === '/quote' ? 'rgb(15, 27, 65)' : 'rgb(19, 34, 81)'}
+                  onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(15, 27, 65)'}
+                  onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = pathname === '/quote' ? 'rgb(15, 27, 65)' : 'rgb(19, 34, 81)'}
                 >
                   Get Quote
                 </a>
@@ -91,7 +103,15 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-2 text-gray-700 hover:text-teal-600 transition-colors rounded-xl hover:bg-teal-50/50 group"
+              className="relative p-2 text-gray-700 transition-colors rounded-xl group"
+              onMouseEnter={(e: MouseEvent<HTMLButtonElement>) => {
+                e.currentTarget.style.color = 'rgb(120, 179, 173)';
+                e.currentTarget.style.backgroundColor = 'rgba(120, 179, 173, 0.05)';
+              }}
+              onMouseLeave={(e: MouseEvent<HTMLButtonElement>) => {
+                e.currentTarget.style.color = 'rgb(55, 65, 81)';
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
             >
               <div className="w-6 h-6 relative">
                 <span className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
@@ -109,7 +129,7 @@ export default function Navigation() {
       {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-        <div className="bg-white/95 backdrop-blur-md border-t border-teal-100/50 shadow-xl">
+        <div className="bg-white/95 backdrop-blur-md border-t shadow-xl" style={{ borderTopColor: 'rgba(120, 179, 173, 0.2)' }}>
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item, index) => (
               <a
@@ -117,16 +137,39 @@ export default function Navigation() {
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl relative group ${isActive(item.href)
-                  ? 'text-teal-600 bg-gradient-to-r from-teal-50 to-emerald-50 shadow-sm'
-                  : 'text-gray-700 hover:text-teal-600 hover:bg-gradient-to-r hover:from-teal-50/50 hover:to-emerald-50/50'
+                  ? 'shadow-sm'
+                  : 'text-gray-700'
                   }`}
-                style={{ animationDelay: `${index * 50}ms` }}
+                style={isActive(item.href) 
+                  ? { 
+                      color: 'rgb(120, 179, 173)', 
+                      background: 'linear-gradient(to right, rgba(120, 179, 173, 0.1), rgba(80, 135, 137, 0.1))',
+                      animationDelay: `${index * 50}ms`
+                    }
+                  : { animationDelay: `${index * 50}ms` }
+                }
+                onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => {
+                  if (!isActive(item.href)) {
+                    e.currentTarget.style.color = 'rgb(120, 179, 173)';
+                    e.currentTarget.style.background = 'linear-gradient(to right, rgba(120, 179, 173, 0.05), rgba(80, 135, 137, 0.05))';
+                  }
+                }}
+                onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => {
+                  if (!isActive(item.href)) {
+                    e.currentTarget.style.color = 'rgb(55, 65, 81)';
+                    e.currentTarget.style.background = 'transparent';
+                  }
+                }}
               >
                 <span className="flex items-center space-x-3">
                   <div className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive(item.href)
-                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500'
-                    : 'bg-gray-300 group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-emerald-400'
-                    }`}></div>
+                    ? ''
+                    : 'bg-gray-300'
+                    }`}
+                    style={isActive(item.href) 
+                      ? { background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))' }
+                      : {}
+                    }></div>
                   <span>{item.label}</span>
                 </span>
               </a>
@@ -139,8 +182,8 @@ export default function Navigation() {
                 style={{
                   backgroundColor: pathname === '/quote' ? 'rgb(15, 27, 65)' : 'rgb(19, 34, 81)'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgb(15, 27, 65)'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = pathname === '/quote' ? 'rgb(15, 27, 65)' : 'rgb(19, 34, 81)'}
+                onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(15, 27, 65)'}
+                onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = pathname === '/quote' ? 'rgb(15, 27, 65)' : 'rgb(19, 34, 81)'}
               >
                 Get Quote
               </a>
