@@ -1,9 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import type { MouseEvent } from 'react';
 import Navigation from '@/components/Navigation';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import { MdSentimentSatisfiedAlt, MdHandshake, MdSchedule, MdEmojiEvents, MdTrendingUp } from 'react-icons/md';
 
 export default function Testimonials() {
   const testimonials = [
@@ -76,19 +78,51 @@ export default function Testimonials() {
   ];
 
   const stats = [
-    { number: 200, suffix: "+", label: "Happy Clients", icon: "😊" },
-    { number: 99, suffix: ".9%", label: "Client Retention", icon: "🤝" },
-    { number: 24, suffix: "/7", label: "Support Available", icon: "🕐" },
-    { number: 6, suffix: " Years", label: "Industry Experience", icon: "🏆" }
+    { number: 200, suffix: "+", label: "Happy Clients", icon: MdSentimentSatisfiedAlt },
+    { number: 99, suffix: ".9%", label: "Client Retention", icon: MdHandshake },
+    { number: 24, suffix: "/7", label: "Support Available", icon: MdSchedule },
+    { number: 6, suffix: " Years", label: "Industry Experience", icon: MdEmojiEvents }
   ];
 
   const colorClasses = {
-    blue: "from-teal-50 to-teal-100 border-teal-200",
-    green: "from-emerald-50 to-emerald-100 border-emerald-200",
-    purple: "from-amber-50 to-amber-100 border-amber-200",
+    blue: "border-opacity-20",
+    green: "border-opacity-20", 
+    purple: "border-opacity-20",
     orange: "from-slate-50 to-slate-100 border-slate-200",
-    indigo: "from-teal-50 to-emerald-100 border-teal-200",
-    teal: "from-emerald-50 to-teal-100 border-emerald-200"
+    indigo: "border-opacity-20",
+    teal: "border-opacity-20"
+  };
+
+  const getColorStyles = (color: string) => {
+    switch(color) {
+      case 'blue':
+        return { 
+          background: 'linear-gradient(to bottom right, rgba(120, 179, 173, 0.1), rgba(120, 179, 173, 0.2))',
+          borderColor: 'rgba(120, 179, 173, 0.2)'
+        };
+      case 'green':
+        return { 
+          background: 'linear-gradient(to bottom right, rgba(80, 135, 137, 0.1), rgba(80, 135, 137, 0.2))',
+          borderColor: 'rgba(80, 135, 137, 0.2)'
+        };
+      case 'purple':
+        return { 
+          background: 'linear-gradient(to bottom right, rgba(202, 176, 154, 0.1), rgba(202, 176, 154, 0.2))',
+          borderColor: 'rgba(202, 176, 154, 0.2)'
+        };
+      case 'indigo':
+        return { 
+          background: 'linear-gradient(to bottom right, rgba(120, 179, 173, 0.1), rgba(80, 135, 137, 0.1))',
+          borderColor: 'rgba(120, 179, 173, 0.2)'
+        };
+      case 'teal':
+        return { 
+          background: 'linear-gradient(to bottom right, rgba(80, 135, 137, 0.1), rgba(120, 179, 173, 0.1))',
+          borderColor: 'rgba(80, 135, 137, 0.2)'
+        };
+      default:
+        return {};
+    }
   };
 
   return (
@@ -96,14 +130,14 @@ export default function Testimonials() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-teal-50 to-emerald-100 py-20 pt-32 relative overflow-hidden">
+      <section className="pt-28 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom right, rgb(120, 179, 173), rgb(240, 253, 250), rgb(245, 240, 235))' }}>
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-teal-300 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-16 h-16 bg-emerald-300 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 rounded-full animate-pulse" style={{ backgroundColor: 'rgb(120, 179, 173)' }}></div>
+          <div className="absolute bottom-10 right-10 w-16 h-16 rounded-full animate-pulse delay-1000" style={{ backgroundColor: 'rgb(80, 135, 137)' }}></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection animation="fadeInUp" className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 bg-clip-text text-transparent" style={{ background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))', WebkitBackgroundClip: 'text' }}>
               Success Stories
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -120,9 +154,11 @@ export default function Testimonials() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <AnimatedSection key={index} animation="scaleIn" delay={index * 100}>
-                <div className="text-center">
-                  <div className="text-4xl mb-2">{stat.icon}</div>
-                  <div className="text-4xl font-bold text-teal-600 mb-2">
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border text-center" style={{ borderColor: 'rgba(120, 179, 173, 0.2)' }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(120, 179, 173, 0.1)' }}>
+                    <stat.icon className="text-2xl" style={{ color: 'rgb(120, 179, 173)' }} />
+                  </div>
+                  <div className="text-3xl font-bold mb-2" style={{ color: 'rgb(120, 179, 173)' }}>
                     <AnimatedCounter end={stat.number} suffix={stat.suffix} />
                   </div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -153,7 +189,7 @@ export default function Testimonials() {
                 delay={index * 100}
                 className="group"
               >
-                <div className={`bg-gradient-to-br ${colorClasses[testimonial.color as keyof typeof colorClasses]} rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border h-full flex flex-col`}>
+                <div className="rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border h-full flex flex-col" style={getColorStyles(testimonial.color)}>
                   {/* Rating */}
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -207,7 +243,7 @@ export default function Testimonials() {
                     <div>
                       <div className="font-semibold text-gray-900">{testimonial.name}</div>
                       <div className="text-sm text-gray-600">{testimonial.position}</div>
-                      <div className="text-sm font-medium text-teal-600">{testimonial.company}</div>
+                      <div className="text-sm font-medium" style={{ color: 'rgb(120, 179, 173)' }}>{testimonial.company}</div>
                     </div>
                   </div>
                 </div>
@@ -229,12 +265,12 @@ export default function Testimonials() {
             </p>
           </AnimatedSection>
 
-          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-8 lg:p-12">
+          <div className="rounded-2xl p-8 lg:p-12" style={{ background: 'linear-gradient(to bottom right, rgba(120, 179, 173, 0.1), rgba(80, 135, 137, 0.1))' }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <AnimatedSection animation="fadeInLeft">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium">
-                    🏆 Featured Success Story
+                  <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium" style={{ backgroundColor: 'rgba(120, 179, 173, 0.1)', color: 'rgb(120, 179, 173)' }}>
+                    <MdEmojiEvents className="mr-2" /> Featured Success Story
                   </div>
                   <h3 className="text-3xl font-bold text-gray-900">
                     TechStart Melbourne: 300% Growth in 18 Months
@@ -271,7 +307,10 @@ export default function Testimonials() {
                   </div>
                   <a
                     href="/contact"
-                    className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold"
+                    className="inline-block text-white px-6 py-3 rounded-lg transition-colors font-semibold"
+                    style={{ backgroundColor: 'rgb(15, 27, 65, 0.8)' }}
+                    onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(15, 27, 65)'}
+                    onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(15, 27, 65, 0.8)'}
                   >
                     Read Full Case Study
                   </a>
@@ -281,22 +320,22 @@ export default function Testimonials() {
               <AnimatedSection animation="fadeInRight" delay={300}>
                 <div className="bg-white rounded-xl p-8 shadow-lg">
                   <div className="text-center mb-6">
-                    <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl">📈</span>
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(120, 179, 173, 0.1)' }}>
+                      <MdTrendingUp className="text-3xl" style={{ color: 'rgb(120, 179, 173)' }} />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900">Growth Metrics</h4>
                   </div>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-teal-600 mb-1">300%</div>
+                      <div className="text-3xl font-bold mb-1" style={{ color: 'rgb(120, 179, 173)' }}>300%</div>
                       <div className="text-sm text-gray-600">Revenue Growth</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-emerald-600 mb-1">40%</div>
+                      <div className="text-3xl font-bold mb-1" style={{ color: 'rgb(80, 135, 137)' }}>40%</div>
                       <div className="text-sm text-gray-600">Cost Reduction</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-amber-600 mb-1">18</div>
+                      <div className="text-3xl font-bold mb-1" style={{ color: 'rgb(202, 176, 154)' }}>18</div>
                       <div className="text-sm text-gray-600">Months Timeline</div>
                     </div>
                     <div className="text-center">
@@ -312,32 +351,28 @@ export default function Testimonials() {
       </section>
 
 
-      <section className="py-20 bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-800 relative overflow-hidden">
+      {/* CTA Section */}
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: 'rgb(15, 27, 65)' }}>
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
           <div className="absolute bottom-10 right-10 w-16 h-16 bg-white rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-white rounded-full animate-pulse delay-500"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <AnimatedSection animation="fadeInUp">
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6 animate-fade-in-up">
               Ready to Write Your Success Story?
             </h2>
-            <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
               Join the growing number of Australian businesses that have transformed
               their operations with Admin & Co. Hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/quote"
-                className="bg-white text-teal-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold"
-              >
+              <a href="/quote" className="bg-white px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl group text-center flex items-center justify-center" style={{ color: 'rgb(15, 27, 65)' }}>
                 Get Your Custom Quote
               </a>
-              <a
-                href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-teal-600 transition-colors text-lg font-semibold"
-              >
+              <a href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white transition-all duration-300 text-lg font-semibold transform hover:scale-105 text-center flex items-center justify-center group" style={{ '--hover-text-color': 'rgb(15, 27, 65)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = 'rgb(15, 27, 65)'} onMouseLeave={(e: MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = 'white'}>
                 Schedule Consultation
               </a>
             </div>
