@@ -399,7 +399,7 @@ export default function Home() {
                     Admin & Co. Hub transformed our back-office operations. Their Australian-based team understands our business culture while delivering global-standard efficiency.&rdquo;
                   </p>
                   <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 transition-all" style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.3)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLDivElement>) => (e.currentTarget.style as any)['--tw-ring-color'] = 'rgba(120, 179, 173, 0.5)'} onMouseLeave={(e: MouseEvent<HTMLDivElement>) => (e.currentTarget.style as any)['--tw-ring-color'] = 'rgba(120, 179, 173, 0.3)'}>
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 transition-all" style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.3)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.style.setProperty('--tw-ring-color', 'rgba(120, 179, 173, 0.5)')} onMouseLeave={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.style.setProperty('--tw-ring-color', 'rgba(120, 179, 173, 0.3)')}>
                       <Image
                         src="/testimonials/sarah-mitchell.jpg"
                         alt="Sarah Mitchell"
@@ -424,7 +424,7 @@ export default function Home() {
                     The scalability and reliability of their services allowed us to focus on growth while they handled our administrative complexities seamlessly.&rdquo;
                   </p>
                   <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 transition-all" style={{ '--tw-ring-color': 'rgba(80, 135, 137, 0.3)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLDivElement>) => (e.currentTarget.style as any)['--tw-ring-color'] = 'rgba(80, 135, 137, 0.5)'} onMouseLeave={(e: MouseEvent<HTMLDivElement>) => (e.currentTarget.style as any)['--tw-ring-color'] = 'rgba(80, 135, 137, 0.3)'}>
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 transition-all" style={{ '--tw-ring-color': 'rgba(80, 135, 137, 0.3)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.style.setProperty('--tw-ring-color', 'rgba(80, 135, 137, 0.5)')} onMouseLeave={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.style.setProperty('--tw-ring-color', 'rgba(80, 135, 137, 0.3)')}>
                       <Image
                         src="/testimonials/david-chen.jpg"
                         alt="David Chen"
@@ -449,7 +449,7 @@ export default function Home() {
                     Outstanding customer service and attention to detail. They feel like an extension of our team rather than an external provider.&rdquo;
                   </p>
                   <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 transition-all" style={{ '--tw-ring-color': 'rgba(202, 176, 154, 0.3)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLDivElement>) => (e.currentTarget.style as any)['--tw-ring-color'] = 'rgba(202, 176, 154, 0.5)'} onMouseLeave={(e: MouseEvent<HTMLDivElement>) => (e.currentTarget.style as any)['--tw-ring-color'] = 'rgba(202, 176, 154, 0.3)'}>
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 transition-all" style={{ '--tw-ring-color': 'rgba(202, 176, 154, 0.3)' } as React.CSSProperties} onMouseEnter={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.style.setProperty('--tw-ring-color', 'rgba(202, 176, 154, 0.5)')} onMouseLeave={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.style.setProperty('--tw-ring-color', 'rgba(202, 176, 154, 0.3)')}>
                       <Image
                         src="/testimonials/emma-thompson.jpg"
                         alt="Emma Thompson"
