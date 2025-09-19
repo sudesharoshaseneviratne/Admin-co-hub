@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import type { MouseEvent } from 'react';
 
 interface Message {
     id: string;
@@ -122,7 +123,12 @@ const Chatbot = () => {
             <div className="fixed bottom-6 right-6 z-50">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="w-16 h-16 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700"
+                    className="w-16 h-16 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+                    style={{ 
+                        background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))'
+                    }}
+                    onMouseEnter={(e: MouseEvent<HTMLButtonElement>) => e.currentTarget.style.background = 'linear-gradient(to right, rgb(100, 159, 153), rgb(60, 115, 117))'}
+                    onMouseLeave={(e: MouseEvent<HTMLButtonElement>) => e.currentTarget.style.background = 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))'}
                 >
                     {isOpen ? (
                         <svg className="w-8 h-8 text-white mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +142,7 @@ const Chatbot = () => {
                 </button>
 
                 {!isOpen && (
-                    <div className="absolute -top-12 right-0 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap animate-bounce">
+                    <div className="absolute -top-12 right-0 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap animate-bounce" style={{ backgroundColor: 'rgb(15, 27, 65)' }}>
                         Need help? Chat with us!
                     </div>
                 )}
@@ -146,7 +152,7 @@ const Chatbot = () => {
             {isOpen && (
                 <div className="fixed bottom-24 right-6 w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col animate-in slide-in-from-bottom-5 duration-300">
                     {/* Header */}
-                    <div className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white p-4 rounded-t-2xl">
+                    <div className="text-white p-4 rounded-t-2xl" style={{ background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))' }}>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
                                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -154,7 +160,7 @@ const Chatbot = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold">Admin & Co. Hub Assistant</h3>
-                                    <p className="text-xs text-teal-100">Online • Ready to help</p>
+                                    <p className="text-xs opacity-80">Online • Ready to help</p>
                                 </div>
                             </div>
                         </div>
@@ -170,11 +176,12 @@ const Chatbot = () => {
                                 <div
                                     className={`max-w-[80%] p-3 rounded-2xl ${message.isBot
                                         ? 'bg-gray-100 text-gray-800'
-                                        : 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white'
+                                        : 'text-white'
                                         }`}
+                                    style={!message.isBot ? { background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))' } : {}}
                                 >
                                     <p className="text-sm">{message.text}</p>
-                                    <p className={`text-xs mt-1 ${message.isBot ? 'text-gray-500' : 'text-teal-100'}`}>
+                                    <p className={`text-xs mt-1 ${message.isBot ? 'text-gray-500' : 'opacity-80'}`}>
                                         {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                     </p>
                                 </div>
@@ -204,7 +211,13 @@ const Chatbot = () => {
                                     <button
                                         key={index}
                                         onClick={action.action}
-                                        className="text-xs bg-teal-50 text-teal-600 px-3 py-2 rounded-lg hover:bg-teal-100 transition-colors"
+                                        className="text-xs px-3 py-2 rounded-lg transition-colors"
+                                        style={{ 
+                                            backgroundColor: 'rgba(120, 179, 173, 0.1)', 
+                                            color: 'rgb(120, 179, 173)' 
+                                        }}
+                                        onMouseEnter={(e: MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = 'rgba(120, 179, 173, 0.2)'}
+                                        onMouseLeave={(e: MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = 'rgba(120, 179, 173, 0.1)'}
                                     >
                                         {action.text}
                                     </button>
@@ -222,12 +235,16 @@ const Chatbot = () => {
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyPress={handleKeyPress}
                                 placeholder="Type your message..."
-                                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:border-transparent"
+                                style={{ '--tw-ring-color': 'rgb(120, 179, 173)' } as React.CSSProperties}
                             />
                             <button
                                 onClick={handleSendMessage}
                                 disabled={!inputValue.trim()}
-                                className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white p-2 rounded-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="text-white p-2 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                style={{ background: 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))' }}
+                                onMouseEnter={(e: MouseEvent<HTMLButtonElement>) => !e.currentTarget.disabled && (e.currentTarget.style.background = 'linear-gradient(to right, rgb(100, 159, 153), rgb(60, 115, 117))')}
+                                onMouseLeave={(e: MouseEvent<HTMLButtonElement>) => e.currentTarget.style.background = 'linear-gradient(to right, rgb(120, 179, 173), rgb(80, 135, 137))'}
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5l7 7-7 7M5 12h14" />
