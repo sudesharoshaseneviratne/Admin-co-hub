@@ -63,7 +63,10 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+            style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+            onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
             placeholder="Your full name"
           />
         </div>
@@ -79,7 +82,10 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+            style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+            onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
             placeholder="your@email.com"
           />
         </div>
@@ -96,7 +102,10 @@ export default function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+            style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+            onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
             placeholder="Your company"
           />
         </div>
@@ -111,7 +120,10 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+            style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+            onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
             placeholder="+61 xxx xxx xxx"
           />
         </div>
@@ -126,7 +138,10 @@ export default function ContactForm() {
           name="service"
           value={formData.service}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+          style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+          onFocus={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+          onBlur={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
         >
           <option value="">Select a service</option>
           <option value="virtual-assistance">Virtual Assistance</option>
@@ -148,7 +163,10 @@ export default function ContactForm() {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+          style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+          onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+          onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
           placeholder="Tell us about your business needs and how we can help..."
         />
       </div>
@@ -156,7 +174,16 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-teal-600 text-white py-4 px-6 rounded-lg hover:bg-teal-700 disabled:bg-teal-400 transition-colors font-semibold text-lg"
+        className="w-full text-white py-4 px-6 rounded-lg transition-colors font-semibold text-lg"
+        style={{ 
+          backgroundColor: isSubmitting ? 'rgba(120, 179, 173, 0.6)' : 'rgb(120, 179, 173)' 
+        }}
+        onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
+          if (!isSubmitting) e.currentTarget.style.backgroundColor = 'rgb(100, 159, 153)';
+        }}
+        onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
+          if (!isSubmitting) e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)';
+        }}
       >
         {isSubmitting ? 'Sending...' : 'Send Inquiry'}
       </button>
