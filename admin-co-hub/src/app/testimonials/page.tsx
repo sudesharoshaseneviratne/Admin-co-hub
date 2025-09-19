@@ -86,7 +86,7 @@ export default function Testimonials() {
 
   const colorClasses = {
     blue: "border-opacity-20",
-    green: "border-opacity-20", 
+    green: "border-opacity-20",
     purple: "border-opacity-20",
     orange: "from-slate-50 to-slate-100 border-slate-200",
     indigo: "border-opacity-20",
@@ -94,29 +94,29 @@ export default function Testimonials() {
   };
 
   const getColorStyles = (color: string) => {
-    switch(color) {
+    switch (color) {
       case 'blue':
-        return { 
+        return {
           background: 'linear-gradient(to bottom right, rgba(120, 179, 173, 0.1), rgba(120, 179, 173, 0.2))',
           borderColor: 'rgba(120, 179, 173, 0.2)'
         };
       case 'green':
-        return { 
+        return {
           background: 'linear-gradient(to bottom right, rgba(80, 135, 137, 0.1), rgba(80, 135, 137, 0.2))',
           borderColor: 'rgba(80, 135, 137, 0.2)'
         };
       case 'purple':
-        return { 
+        return {
           background: 'linear-gradient(to bottom right, rgba(202, 176, 154, 0.1), rgba(202, 176, 154, 0.2))',
           borderColor: 'rgba(202, 176, 154, 0.2)'
         };
       case 'indigo':
-        return { 
+        return {
           background: 'linear-gradient(to bottom right, rgba(120, 179, 173, 0.1), rgba(80, 135, 137, 0.1))',
           borderColor: 'rgba(120, 179, 173, 0.2)'
         };
       case 'teal':
-        return { 
+        return {
           background: 'linear-gradient(to bottom right, rgba(80, 135, 137, 0.1), rgba(120, 179, 173, 0.1))',
           borderColor: 'rgba(80, 135, 137, 0.2)'
         };
