@@ -95,20 +95,20 @@ export default function Quote() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">What happens next?</h3>
                 <div className="space-y-3 text-left">
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-teal-600 font-semibold text-sm">1</span>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3" style={{ backgroundColor: 'rgba(120, 179, 173, 0.1)' }}>
+                      <span className="font-semibold text-sm" style={{ color: 'rgb(120, 179, 173)' }}>1</span>
                     </div>
                     <span className="text-gray-700">Our team reviews your requirements (within 2 hours)</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-teal-600 font-semibold text-sm">2</span>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3" style={{ backgroundColor: 'rgba(120, 179, 173, 0.1)' }}>
+                      <span className="font-semibold text-sm" style={{ color: 'rgb(120, 179, 173)' }}>2</span>
                     </div>
                     <span className="text-gray-700">We prepare a detailed proposal and pricing (within 24 hours)</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-teal-600 font-semibold text-sm">3</span>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3" style={{ backgroundColor: 'rgba(120, 179, 173, 0.1)' }}>
+                      <span className="font-semibold text-sm" style={{ color: 'rgb(120, 179, 173)' }}>3</span>
                     </div>
                     <span className="text-gray-700">Schedule a consultation call to discuss details</span>
                   </div>
@@ -117,13 +117,25 @@ export default function Quote() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/"
-                  className="bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold"
+                  className="text-white px-8 py-3 rounded-lg transition-colors font-semibold"
+                  style={{ backgroundColor: 'rgb(120, 179, 173)' }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(100, 159, 153)'}
+                  onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)'}
                 >
                   Return Home
                 </Link>
                 <a
                   href="/services"
-                  className="border-2 border-teal-600 text-teal-600 px-8 py-3 rounded-lg hover:bg-teal-600 hover:text-white transition-colors font-semibold"
+                  className="border-2 px-8 py-3 rounded-lg transition-colors font-semibold"
+                  style={{ borderColor: 'rgb(120, 179, 173)', color: 'rgb(120, 179, 173)' }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                    e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)';
+                    e.currentTarget.style.color = 'white';
+                  }}
+                  onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = 'rgb(120, 179, 173)';
+                  }}
                 >
                   Learn More About Our Services
                 </a>
@@ -149,14 +161,14 @@ export default function Quote() {
               {[1, 2, 3].map((step) => (
                 <div key={step} className="flex items-center">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${currentStep >= step
-                    ? 'bg-teal-600 text-white'
+                    ? 'text-white'
                     : 'bg-gray-200 text-gray-600'
-                    }`}>
+                    }`} style={currentStep >= step ? { backgroundColor: 'rgb(120, 179, 173)' } : {}}>
                     {step}
                   </div>
                   {step < 3 && (
-                    <div className={`w-16 h-1 mx-2 ${currentStep > step ? 'bg-teal-600' : 'bg-gray-200'
-                      }`}></div>
+                    <div className={`w-16 h-1 mx-2 ${currentStep > step ? '' : 'bg-gray-200'
+                      }`} style={currentStep > step ? { backgroundColor: 'rgb(120, 179, 173)' } : {}}></div>
                   )}
                 </div>
               ))}
@@ -189,7 +201,10 @@ export default function Quote() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                       placeholder="Your full name"
                     />
                   </div>
@@ -204,7 +219,10 @@ export default function Quote() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                       placeholder="your@email.com"
                     />
                   </div>
@@ -221,7 +239,10 @@ export default function Quote() {
                       required
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                       placeholder="Your company name"
                     />
                   </div>
@@ -235,7 +256,10 @@ export default function Quote() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                       placeholder="+61 xxx xxx xxx"
                     />
                   </div>
@@ -250,7 +274,10 @@ export default function Quote() {
                       name="industry"
                       value={formData.industry}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     >
                       <option value="">Select your industry</option>
                       <option value="technology">Technology</option>
@@ -272,7 +299,10 @@ export default function Quote() {
                       name="employees"
                       value={formData.employees}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     >
                       <option value="">Select company size</option>
                       <option value="1-10">1-10 employees</option>
@@ -308,15 +338,38 @@ export default function Quote() {
                         <label
                           htmlFor={service}
                           className={`block p-4 border-2 rounded-lg cursor-pointer transition-all ${formData.services.includes(service)
-                            ? 'border-teal-500 bg-teal-50 text-teal-700'
-                            : 'border-gray-200 hover:border-teal-300'
+                            ? 'text-white'
+                            : 'border-gray-200'
                             }`}
+                          style={formData.services.includes(service) 
+                            ? { 
+                                borderColor: 'rgb(120, 179, 173)', 
+                                backgroundColor: 'rgba(120, 179, 173, 0.1)',
+                                color: 'rgb(120, 179, 173)'
+                              }
+                            : {}}
+                          onMouseEnter={(e: React.MouseEvent<HTMLLabelElement>) => {
+                            if (!formData.services.includes(service)) {
+                              e.currentTarget.style.borderColor = 'rgba(120, 179, 173, 0.5)';
+                            }
+                          }}
+                          onMouseLeave={(e: React.MouseEvent<HTMLLabelElement>) => {
+                            if (!formData.services.includes(service)) {
+                              e.currentTarget.style.borderColor = 'rgb(229, 231, 235)';
+                            }
+                          }}
                         >
                           <div className="flex items-center">
                             <div className={`w-5 h-5 rounded border-2 mr-3 flex items-center justify-center ${formData.services.includes(service)
-                              ? 'border-teal-500 bg-teal-500'
+                              ? 'text-white'
                               : 'border-gray-300'
-                              }`}>
+                              }`}
+                              style={formData.services.includes(service) 
+                                ? { 
+                                    borderColor: 'rgb(120, 179, 173)', 
+                                    backgroundColor: 'rgb(120, 179, 173)' 
+                                  }
+                                : {}}>
                               {formData.services.includes(service) && (
                                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -340,7 +393,10 @@ export default function Quote() {
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     >
                       <option value="">Select timeline</option>
                       <option value="asap">ASAP (Within 1 week)</option>
@@ -359,7 +415,10 @@ export default function Quote() {
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                      style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                      onFocus={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                      onBlur={(e: React.FocusEvent<HTMLSelectElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     >
                       <option value="">Select budget range</option>
                       <option value="under-5k">Under $5,000</option>
@@ -388,7 +447,10 @@ export default function Quote() {
                     rows={4}
                     value={formData.description}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                    style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                    onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                    onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     placeholder="Describe your project requirements, goals, and any specific needs..."
                   />
                 </div>
@@ -402,7 +464,10 @@ export default function Quote() {
                     rows={3}
                     value={formData.currentChallenges}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                    style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                    onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                    onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     placeholder="What challenges are you currently facing that you'd like us to help solve?"
                   />
                 </div>
@@ -416,7 +481,10 @@ export default function Quote() {
                     rows={3}
                     value={formData.goals}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                    style={{ '--tw-ring-color': 'rgba(120, 179, 173, 0.5)' } as React.CSSProperties}
+                    onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(120, 179, 173)'}
+                    onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgb(209, 213, 219)'}
                     placeholder="What would success look like for this project? What are your key objectives?"
                   />
                 </div>
@@ -430,8 +498,9 @@ export default function Quote() {
                 onClick={prevStep}
                 className={`px-6 py-3 rounded-lg font-semibold transition-colors ${currentStep === 1
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-gray-200 text-teal-700 hover:bg-gray-300'
+                  : 'bg-gray-200 hover:bg-gray-300'
                   }`}
+                style={currentStep !== 1 ? { color: 'rgb(120, 179, 173)' } : {}}
                 disabled={currentStep === 1}
               >
                 Previous
@@ -441,7 +510,10 @@ export default function Quote() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold"
+                  className="text-white px-6 py-3 rounded-lg transition-colors font-semibold"
+                  style={{ backgroundColor: 'rgb(120, 179, 173)' }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = 'rgb(100, 159, 153)'}
+                  onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)'}
                 >
                   Next Step
                 </button>
@@ -449,7 +521,16 @@ export default function Quote() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 disabled:bg-teal-400 transition-colors font-semibold"
+                  className="text-white px-8 py-3 rounded-lg transition-colors font-semibold"
+                  style={{ 
+                    backgroundColor: isSubmitting ? 'rgba(120, 179, 173, 0.6)' : 'rgb(120, 179, 173)' 
+                  }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    if (!isSubmitting) e.currentTarget.style.backgroundColor = 'rgb(100, 159, 153)';
+                  }}
+                  onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    if (!isSubmitting) e.currentTarget.style.backgroundColor = 'rgb(120, 179, 173)';
+                  }}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
                 </button>
