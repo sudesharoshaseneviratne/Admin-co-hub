@@ -4,7 +4,7 @@ import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 export default function Navigation() {
   const pathname = usePathname();
